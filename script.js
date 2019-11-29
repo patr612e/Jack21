@@ -289,37 +289,6 @@ let deck = [
 let playerScore;
 let dealerScore;
 
-function dealPlayerCards() {
-  // CARD 1
-
-  const card1 = deck[Math.floor(Math.random() * deck.length)];
-  const index1 = deck.indexOf(card1);
-  deck.splice(index1, 1);
-  playerCards.push(card1);
-
-  // CARD 2
-
-  const card2 = deck[Math.floor(Math.random() * deck.length)];
-  const index2 = deck.indexOf(card2);
-  deck.splice(index2, 1);
-  playerCards.push(card2);
-
-  console.log(card1);
-  console.log(card2);
-  console.log(deck);
-
-  // UPDATE DOM
-
-  document.querySelector(".cardtype1").textContent = card1.name;
-  document.querySelector(".cardtype2").textContent = card2.name;
-
-  // DISABLE DEAL BUTTON
-
-  // IF TWO ACES USE DIFFERENT CARD VALUE
-
-  calcScore(card1, card2);
-}
-
 function dealPlayerCard() {
   // Pick and splice card from deck array
 
@@ -366,24 +335,10 @@ function calcPlayerScore() {
   bustCheck();
 }
 
-function calcScore(card1, card2) {
-  console.log(card1);
-  console.log(card2);
-
-  playerScore = card1.value + card2.value;
-}
-
 function bustCheck() {
   if (playerScore > 21) {
     alert("busted");
   }
-}
-
-function hit() {
-  // Pick and splice random card from deck array
-  // Add to playerCards array
-  // Calc new score and update playerScore
-  // Call bustCheck()
 }
 
 function resetGame() {
