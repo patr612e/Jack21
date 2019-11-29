@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="264.08mm" height="194.37mm" viewBox="0 0 748.57 550.96">
+  <title>table</title>
+  <g id="Layer_1" data-name="Layer 1">
+    <rect x="0.5" y="0.5" width="747.57" height="549.96" style="fill: #009444;stroke: #231f20;stroke-miterlimit: 10"/>
+  </g>
+  <g id="Layer_3" data-name="Layer 3">
+    <text transform="translate(221.18 304.18)" style="opacity: 0.51;font-size: 88px;fill: #d7df23;font-family: BaskOldFace, Baskerville Old Face">JACK 21</text>
+  </g>
+  <g id="Layer_2" data-name="Layer 2">
+    <polyline points="363.28 156.82 372.72 160.39 392.68 147.97 387.07 138.71 358.81 136.99" style="fill: none"/>
+    <path d="M317.59,90.29c0-.68-.07-1.36-.12-2s.08-1,.87-1.2a4.44,4.44,0,0,0,.64-.28l0-.16a1.53,1.53,0,0,0-.37,0c-1.35.45-1.69.4-1.45,2,.08.54.13,1.08.19,1.62Z"/>
+    <path d="M301.51,205.27c-.22.65-.42,1.3-.65,1.94s-.18,1,.53,1.38a4.51,4.51,0,0,1,.54.44l-.08.14a1.28,1.28,0,0,1-.35-.09c-1.19-.78-1.53-.83-.88-2.33.21-.5.4-1,.6-1.51Z"/>
+  </g>
+</svg>
