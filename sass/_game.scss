@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 5px;
-}
-
 #playtable {
   display: grid;
   grid-template-columns: 4fr 1fr;
@@ -52,15 +47,15 @@
 }
 
 /* .card2 {
-  position: absolute;
-  top: 20px;
-  left: 120px;
-
-  width: 80px;
-  height: 120px;
-  border-radius: 5px;
-  background-color: gainsboro;
-} */
+    position: absolute;
+    top: 20px;
+    left: 120px;
+  
+    width: 80px;
+    height: 120px;
+    border-radius: 5px;
+    background-color: gainsboro;
+  } */
 
 button {
   padding: 5px;
