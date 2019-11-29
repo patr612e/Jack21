@@ -21,266 +21,266 @@ let deck = [
   {
     name: "2",
     value: 2,
-    image: "tba"
+    image: "svg/cards/h-2.svg"
   },
   {
     name: "2",
     value: 2,
-    image: "tba"
+    image: "svg/cards/k-2.svg"
   },
   {
     name: "2",
     value: 2,
-    image: "tba"
+    image: "svg/cards/r-2.svg"
   },
   {
     name: "2",
     value: 2,
-    image: "tba"
+    image: "svg/cards/s-2.svg"
   },
   {
     name: "3",
     value: 3,
-    image: "tba"
+    image: "svg/cards/h-3.svg"
   },
   {
     name: "3",
     value: 3,
-    image: "tba"
+    image: "svg/cards/k-3.svg"
   },
   {
     name: "3",
     value: 3,
-    image: "tba"
+    image: "svg/cards/r-3.svg"
   },
   {
     name: "3",
     value: 3,
-    image: "tba"
+    image: "svg/cards/s-3.svg"
   },
   {
     name: "4",
     value: 4,
-    image: "tba"
+    image: "svg/cards/h-4.svg"
   },
   {
     name: "4",
     value: 4,
-    image: "tba"
+    image: "svg/cards/k-4.svg"
   },
   {
     name: "4",
     value: 4,
-    image: "tba"
+    image: "svg/cards/r-4.svg"
   },
   {
     name: "4",
     value: 4,
-    image: "tba"
+    image: "svg/cards/s-4.svg"
   },
   {
     name: "5",
     value: 5,
-    image: "tba"
+    image: "svg/cards/h-5.svg"
   },
   {
     name: "5",
     value: 5,
-    image: "tba"
+    image: "svg/cards/k-5.svg"
   },
   {
     name: "5",
     value: 5,
-    image: "tba"
+    image: "svg/cards/r-5.svg"
   },
   {
     name: "5",
     value: 5,
-    image: "tba"
+    image: "svg/cards/s-5.svg"
   },
   {
     name: "6",
     value: 6,
-    image: "tba"
+    image: "svg/cards/h-6.svg"
   },
   {
     name: "6",
     value: 6,
-    image: "tba"
+    image: "svg/cards/k-6.svg"
   },
   {
     name: "6",
     value: 6,
-    image: "tba"
+    image: "svg/cards/r-6.svg"
   },
   {
     name: "6",
     value: 6,
-    image: "tba"
+    image: "svg/cards/s-6.svg"
   },
   {
     name: "7",
     value: 7,
-    image: "tba"
+    image: "svg/cards/h-7.svg"
   },
   {
     name: "7",
     value: 7,
-    image: "tba"
+    image: "svg/cards/k-7.svg"
   },
   {
     name: "7",
     value: 7,
-    image: "tba"
+    image: "svg/cards/r-7.svg"
   },
   {
     name: "7",
     value: 7,
-    image: "tba"
+    image: "svg/cards/s-7.svg"
   },
   {
     name: "8",
     value: 8,
-    image: "tba"
+    image: "svg/cards/h-8.svg"
   },
   {
     name: "8",
     value: 8,
-    image: "tba"
+    image: "svg/cards/k-8.svg"
   },
   {
     name: "8",
     value: 8,
-    image: "tba"
+    image: "svg/cards/r-8.svg"
   },
   {
     name: "8",
     value: 8,
-    image: "tba"
+    image: "svg/cards/s-8.svg"
   },
   {
     name: "9",
     value: 9,
-    image: "tba"
+    image: "svg/cards/h-9.svg"
   },
   {
     name: "9",
     value: 9,
-    image: "tba"
+    image: "svg/cards/k-9.svg"
   },
   {
     name: "9",
     value: 9,
-    image: "tba"
+    image: "svg/cards/r-9.svg"
   },
   {
     name: "9",
     value: 9,
-    image: "tba"
+    image: "svg/cards/s-9.svg"
   },
   {
     name: "10",
     value: 10,
-    image: "tba"
+    image: "svg/cards/h-10.svg"
   },
   {
     name: "10",
     value: 10,
-    image: "tba"
+    image: "svg/cards/k-10.svg"
   },
   {
     name: "10",
     value: 10,
-    image: "tba"
+    image: "svg/cards/r-10.svg"
   },
   {
     name: "10",
     value: 10,
-    image: "tba"
+    image: "svg/cards/s-10.svg"
   },
   {
     name: "J",
     value: 10,
-    image: "tba"
+    image: "svg/cards/h-j.svg"
   },
   {
     name: "J",
     value: 10,
-    image: "tba"
+    image: "svg/cards/k-j.svg"
   },
   {
     name: "J",
     value: 10,
-    image: "tba"
+    image: "svg/cards/r-j.svg"
   },
   {
     name: "J",
     value: 10,
-    image: "tba"
+    image: "svg/cards/s-j.svg"
   },
   {
     name: "Q",
     value: 10,
-    image: "tba"
+    image: "svg/cards/h-q.svg"
   },
   {
     name: "Q",
     value: 10,
-    image: "tba"
+    image: "svg/cards/k-q.svg"
   },
   {
     name: "Q",
     value: 10,
-    image: "tba"
+    image: "svg/cards/r-q.svg"
   },
   {
     name: "Q",
     value: 10,
-    image: "tba"
+    image: "svg/cards/s-q.svg"
   },
   {
     name: "K",
     value: 10,
-    image: "tba"
+    image: "svg/cards/h-k.svg"
   },
   {
     name: "K",
     value: 10,
-    image: "tba"
+    image: "svg/cards/k-k.svg"
   },
   {
     name: "K",
     value: 10,
-    image: "tba"
+    image: "svg/cards/r-k.svg"
   },
   {
     name: "K",
     value: 10,
-    image: "tba"
+    image: "svg/cards/s-k.svg"
   },
   {
     name: "A",
     value: 11,
     value2: 1,
-    image: "tba"
+    image: "svg/cards/h-1.svg"
   },
   {
     name: "A",
     value: 11,
     value2: 1,
-    image: "tba"
+    image: "svg/cards/k-1.svg"
   },
   {
     name: "A",
     value: 11,
     value2: 1,
-    image: "tba"
+    image: "svg/cards/r-1.svg"
   },
   {
     name: "A",
     value: 11,
     value2: 1,
-    image: "tba"
+    image: "svg/cards/s-1.svg"
   }
 ];
 window.deck = deck;
@@ -311,6 +311,7 @@ function dealPlayerCard() {
 function addCardToDOM(card) {
   let domcard = document.createElement("div");
   domcard.classList.add("card");
+  domcard.style.backgroundImage = `url('${card.image}')`;
 
   // add style class to element
   // modify position on each element
