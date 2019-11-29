@@ -283,7 +283,9 @@ let deck = [
     image: "tba"
   }
 ];
+window.deck = deck;
 
+console.log(deck);
 // GLOBAL VARIABLES
 
 let playerScore;
@@ -301,6 +303,8 @@ function dealPlayerCard() {
 
   addCardToDOM(card);
 
+  console.log(playerScore);
+
   // Call Calc playerCards array value function
 }
 
@@ -315,7 +319,7 @@ function addCardToDOM(card) {
 
   playerCardsPos.appendChild(domcard);
 
-  console.log(playerCards);
+  console.table(playerCards);
 
   calcPlayerScore();
 }
@@ -323,12 +327,29 @@ function addCardToDOM(card) {
 function calcPlayerScore() {
   let score = 0;
 
+  const index = playerCards.findIndex(card => card.name === "A");
+
+  let ace = null;
+  if (index > -1) {
+    ace = playerCards.splice(index, 1);
+    ace = ace[0];
+  }
+
   playerCards.forEach(card => {
     score += card.value;
   });
+  if (ace) {
+    console.log("ACE", score);
+    if (score + 11 > 21) {
+      score += 1;
+    } else {
+      score += 11;
+    }
+    playerCards.push(ace);
+    console.log(score);
+  }
 
   playerScore = score;
-  console.log(playerScore);
 
   playerScorePos.textContent = playerScore;
 
