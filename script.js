@@ -4,14 +4,34 @@
 
 const playButton = document.querySelector("#play");
 const hitButton = document.querySelector("#hit");
+const standButton = document.querySelector("#stand");
 
 const playerCardsPos = document.querySelector("#playercards");
 const playerScorePos = document.querySelector("#playerscore_printed");
+const dealerCardsPos = document.querySelector("#dealercards");
+const dealerScorePos = document.querySelector("#dealerscore_printed");
 
 // EVENTLISTENERS
 
-hitButton.addEventListener("click", hit);
-playButton.addEventListener("click", dealPlayerCard);
+playButton.addEventListener("click", () => {
+  playButton.classList.add("disabled_button");
+
+  setTimeout(dealDealerCard, 300);
+  setTimeout(dealPlayerCard, 600);
+  setTimeout(dealDealerCard, 900);
+  setTimeout(dealPlayerCard, 1200);
+
+  playButton.disabled = true;
+
+  standButton.disabled = false;
+  hitButton.disabled = false;
+
+  hitButton.classList.remove("disabled_button");
+  standButton.classList.remove("disabled_button");
+});
+
+hitButton.addEventListener("click", dealPlayerCard);
+standButton.addEventListener("click", stand);
 
 // ARRAYS
 
@@ -283,6 +303,7 @@ let deck = [
     image: "svg/cards/s-1.svg"
   }
 ];
+
 window.deck = deck;
 
 console.log(deck);
@@ -290,6 +311,78 @@ console.log(deck);
 
 let playerScore;
 let dealerScore;
+let visibleDealerScore;
+
+// DEALER SIDE
+
+function dealDealerCard() {
+  let card = deck[Math.floor(Math.random() * deck.length)];
+  let location = deck.indexOf(card);
+  deck.splice(location, 1);
+
+  // Add to dealerCards array
+  dealerCards.push(card);
+
+  let i;
+
+  addDealerCardToDOM(card);
+
+  console.log(dealerScore);
+
+  //disable deal button
+}
+
+function addDealerCardToDOM(card) {
+  let domcard = document.createElement("div");
+  domcard.classList.add("card");
+  domcard.style.backgroundImage = `url('${card.image}')`;
+
+  // add style class to element
+  // modify position on each element
+
+  // append to DOM
+
+  dealerCardsPos.appendChild(domcard);
+
+  console.table(dealerCards);
+
+  calcDealerScore();
+}
+
+function calcDealerScore() {
+  let score = 0;
+
+  const index = dealerCards.findIndex(card => card.name === "A");
+
+  let ace = null;
+  if (index > -1) {
+    ace = dealerCards.splice(index, 1);
+    ace = ace[0];
+  }
+
+  dealerCards.forEach(card => {
+    score += card.value;
+  });
+
+  if (ace) {
+    console.log("ACE", score);
+    if (score + 11 > 21) {
+      score += 1;
+    } else {
+      score += 11;
+    }
+    dealerCards.push(ace);
+    console.log(score);
+  }
+
+  dealerScore = score;
+
+  visibleDealerScore = score - dealerCards[0];
+
+  dealerScorePos.textContent = dealerScore;
+}
+
+// PLAYER SIDE
 
 function dealPlayerCard() {
   // Pick and splice card from deck array
@@ -301,14 +394,14 @@ function dealPlayerCard() {
   // Add to playerCards array
   playerCards.push(card);
 
-  addCardToDOM(card);
+  addPlayerCardToDOM(card);
 
   console.log(playerScore);
 
   // Call Calc playerCards array value function
 }
 
-function addCardToDOM(card) {
+function addPlayerCardToDOM(card) {
   let domcard = document.createElement("div");
   domcard.classList.add("card");
   domcard.style.backgroundImage = `url('${card.image}')`;
@@ -359,7 +452,50 @@ function calcPlayerScore() {
 
 function bustCheck() {
   if (playerScore > 21) {
-    alert("busted");
+    console.log("dealer wins, you went bust!");
+  }
+}
+
+function stand() {
+  // disable hit+stand button ???
+
+  hitButton.disabled = true;
+  hitButton.classList.add("disabled_button");
+  standButton.disabled = true;
+  standButton.classList.add("disabled_button");
+
+  while (dealerScore < 18) {
+    dealDealerCard();
+  }
+
+  determineWinner();
+}
+
+function determineWinner() {
+  console.log("determinewinner");
+
+  if (dealerScore > 21 && playerScore < 21) {
+    console.log("player wins, dealer went bust");
+  }
+
+  if (dealerScore > playerScore && dealerScore <= 21 && playerScore <= 21) {
+    console.log("dealer wins, dealer has the highest hand");
+  }
+
+  if (dealerScore == playerScore && playerScore < 21 && dealerScore < 21 && !(dealerScore === 21)) {
+    console.log("it's a tie!");
+  }
+
+  if (playerScore > dealerScore && playerScore <= 21) {
+    console.log("player wins, player has the highest hand");
+  }
+
+  if (dealerScore === 21) {
+    console.log("dealer wins, dealer has blackjack");
+  }
+
+  if (playerScore > 21) {
+    console.log("dealer wins, you went bust");
   }
 }
 
@@ -367,4 +503,5 @@ function resetGame() {
   // reset arrays (push, pop etc.)
   // reset scores
   // reset DOM
+  // enable buttons, remove classes
 }
