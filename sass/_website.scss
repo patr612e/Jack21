@@ -1,0 +1,50 @@
+@media only screen and (min-width: 1000px) {
+  body {
+    background-color: lightblue;
+  }
+
+  #game-background {
+    width: 100vw;
+    height: 100vh;
+    background: url("static/Backgrounds/game-background2.svg") center;
+    background-repeat: no-repeat;
+  }
+  body {
+    background: rgb(128, 158, 171);
+  }
+
+  #fugl {
+    width: 62.5px;
+    height: 95px;
+    position: absolute;
+    left: -5rem;
+    background: url("static/Backgrounds/Fugle_1.svg") left center;
+    background-size: cover;
+    animation: bird-animation 0.4s steps(4) infinite,
+      move-animatiion 7s infinite linear;
+  }
+
+  @keyframes bird-animation {
+    0% {
+      background-position: 0px;
+    }
+    100% {
+      background-position: -497.5px;
+    }
+  }
+  @keyframes move-animatiion {
+    100% {
+      transform: translateX(110vw) translateY(50px);
+    }
+  }
+  #game-background-mobil {
+    display: none;
+  }
+}
+
+#game-background-mobil {
+  width: 100vw;
+  height: 100vh;
+  background: url("static/Backgrounds/game-background.svg") center;
+  background-repeat: no-repeat;
+}
