@@ -5,6 +5,7 @@
 const playButton = document.querySelector("#play");
 const hitButton = document.querySelector("#hit");
 const standButton = document.querySelector("#stand");
+const resetButton = document.querySelector("#reset");
 
 const playerCardsPos = document.querySelector("#playercards");
 const playerScorePos = document.querySelector("#playerscore_printed");
@@ -25,13 +26,15 @@ playButton.addEventListener("click", () => {
 
   standButton.disabled = false;
   hitButton.disabled = false;
+  resetButton.disabled = true;
 
   hitButton.classList.remove("disabled_button");
   standButton.classList.remove("disabled_button");
 });
 
 hitButton.addEventListener("click", dealPlayerCard);
-standButton.addEventListener("click", stand);
+standButton.addEventListener("click", standClicked);
+resetButton.addEventListener("click", resetGame);
 
 // ARRAYS
 
@@ -305,6 +308,8 @@ let deck = [
 ];
 
 window.deck = deck;
+window.dealerCards = dealerCards;
+window.playerCards = playerCards;
 
 console.log(deck);
 // GLOBAL VARIABLES
@@ -344,6 +349,9 @@ function addDealerCardToDOM(card) {
 
   console.table(dealerCards);
 
+  let forsteKort = dealerCardsPos.firstElementChild;
+  forsteKort.classList.add("card_backside");
+
   calcDealerScore();
 }
 
@@ -375,16 +383,14 @@ function calcDealerScore() {
 
   dealerScore = score;
 
-  visibleDealerScore = score - dealerCards[0];
+  visibleDealerScore = score - dealerCards[0].value;
 
-  dealerScorePos.textContent = dealerScore;
+  dealerScorePos.textContent = visibleDealerScore;
 }
 
 // PLAYER SIDE
 
 function dealPlayerCard() {
-  // Pick and splice card from deck array
-
   let card = deck[Math.floor(Math.random() * deck.length)];
   let location = deck.indexOf(card);
   deck.splice(location, 1);
@@ -404,9 +410,6 @@ function addPlayerCardToDOM(card) {
   domcard.classList.add("card");
   domcard.style.backgroundImage = `url('${card.image}')`;
 
-  // add style class to element
-  // modify position on each element
-
   // append to DOM
 
   playerCardsPos.appendChild(domcard);
@@ -423,7 +426,9 @@ function calcPlayerScore() {
 
   let ace = null;
   if (index > -1) {
+    // ace is an array:
     ace = playerCards.splice(index, 1);
+    // ace is first (and only) object in array:
     ace = ace[0];
   }
 
@@ -452,19 +457,51 @@ function bustCheck() {
   if (playerScore > 21) {
     console.log("dealer wins, you went bust!");
   }
+
+  //You went bust window
+
+  // play again (reset) button
 }
 
-function stand() {
-  // disable hit+stand button ???
+function standClicked() {
+  console.log("clicked på stand");
+
+  // find firstCard
+
+  let firstCard = dealerCardsPos.firstElementChild;
+
+  // let firstCard = dealerCards[0];
+
+  // firstCard.style.backgroundImage = "url(svg/cards/card.svg)";
+
+  // og find card
+
+  stand(firstCard);
+}
+
+function stand(firstCard) {
+  // disable buttons
 
   hitButton.disabled = true;
   hitButton.classList.add("disabled_button");
   standButton.disabled = true;
   standButton.classList.add("disabled_button");
+  resetButton.disabled = false;
+  resetButton.classList.remove("disabled_button");
+
+  // draw a card until score is 17 or more
 
   while (dealerScore < 17) {
     dealDealerCard();
   }
+
+  // reveal dealerScore
+
+  dealerScorePos.textContent = dealerScore;
+
+  // turn (show) first card
+
+  firstCard.classList.remove("card_backside");
 
   determineWinner();
 }
@@ -499,7 +536,41 @@ function determineWinner() {
 
 function resetGame() {
   // reset arrays (push, pop etc.)
+
+  for (let i = 0; i < dealerCards.length; i++) {
+    deck.push(dealerCards[i]);
+    dealerCards.splice(i, 1);
+    i--;
+  }
+
+  for (let i = 0; i < playerCards.length; i++) {
+    deck.push(playerCards[i]);
+    playerCards.splice(i, 1);
+    i--;
+  }
+
   // reset scores
+
+  playerScore = 0;
+  dealerScore = 0;
+  visibleDealerScore = 0;
+
   // reset DOM
+
+  dealerCardsPos.innerHTML = 0;
+  playerCardsPos.innerHTML = 0;
+
+  playerScorePos.textContent = 0;
+  dealerScorePos.textContent = 0;
+
+  // hide class on play again windows
+
   // enable buttons, remove classes
+
+  playButton.disabled = false;
+  playButton.classList.remove("disabled_button");
+  hitButton.disabled = false;
+  hitButton.classList.remove("disabled_button");
+  standButton.disabled = false;
+  standButton.classList.remove("disabled_button");
 }
