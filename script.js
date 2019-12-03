@@ -323,8 +323,6 @@ function dealDealerCard() {
   // Add to dealerCards array
   dealerCards.push(card);
 
-  let i;
-
   addDealerCardToDOM(card);
 
   console.log(dealerScore);
@@ -464,7 +462,7 @@ function stand() {
   standButton.disabled = true;
   standButton.classList.add("disabled_button");
 
-  while (dealerScore < 18) {
+  while (dealerScore < 17) {
     dealDealerCard();
   }
 
@@ -474,7 +472,7 @@ function stand() {
 function determineWinner() {
   console.log("determinewinner");
 
-  if (dealerScore > 21 && playerScore < 21) {
+  if (dealerScore > 21 && playerScore <= 21) {
     console.log("player wins, dealer went bust");
   }
 
