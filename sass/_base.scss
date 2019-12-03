@@ -1,4 +1,12 @@
-* {
-  margin: 0;
-  padding: 5px;
+$william: #506966;
+$matterhorn: #5c4d4d;
+$ivory: #fcfaef;
+$valencia: #d3504a;
+
+nav {
+  background-color: $william;
+
+  a {
+    color: $ivory;
+  }
 }

@@ -1,0 +1,24 @@
+#lumberjack-svg {
+  background-image: url(/static/svg/lumberjack.svg);
+  width: 50vw;
+  height: 40vw;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#info-box {
+  background-color: $matterhorn;
+  border-radius: 10px;
+
+  h1,
+  h2,
+  p {
+    color: $ivory;
+  }
+
+  button {
+    background-color: $valencia;
+    color: $ivory;
+  }
+}
