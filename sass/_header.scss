@@ -1,0 +1,64 @@
+#menu img {
+  margin-right: 0;
+  width: 5rem;
+  height: auto;
+}
+
+#pc-header {
+  display: none;
+}
+html {
+  margin: 0;
+  padding: 0;
+}
+#ikkeses {
+  width: 5rem;
+}
+#menu {
+  padding: 0;
+  margin: 0;
+}
+#logo1 {
+  padding-top: 1rem;
+  justify-self: center;
+}
+#mobil-header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+
+  background: #506966;
+}
+#playtable {
+  display: none;
+}
+
+@media only screen and (min-width: 1000px) {
+  #mobil-header {
+    display: none;
+  }
+  #pc-header {
+    padding: 0;
+    margin: 0;
+    display: block;
+    ul {
+      background: #506966;
+      list-style-type: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      height: 5rem;
+      padding: 0.3rem;
+
+      li {
+        color: white;
+        padding-top: 1.5rem;
+        font-family: "Rubik", sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+    }
+    #logo2 {
+      justify-self: left;
+      height: 5rem;
+    }
+  }
+}

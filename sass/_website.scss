@@ -9,9 +9,6 @@
     background: url("static/Backgrounds/game-background2.svg") center;
     background-repeat: no-repeat;
   }
-  body {
-    background: black;
-  }
 
   #fugl {
     width: 62.5px;
@@ -47,4 +44,7 @@
   height: 100vh;
   background: url("static/Backgrounds/game-background.svg") center;
   background-repeat: no-repeat;
+}
+body {
+  background: rgb(128, 158, 171);
 }
