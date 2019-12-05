@@ -12,6 +12,11 @@ const playerScorePos = document.querySelector("#playerscore_printed");
 const dealerCardsPos = document.querySelector("#dealercards");
 const dealerScorePos = document.querySelector("#dealerscore_printed");
 
+const endgamePCards = document.querySelector(".endgame_pcards");
+const endgameDCards = document.querySelector(".endgame_dcards");
+const endgamePScore = document.querySelector(".endgame_pscore");
+const endgameDScore = document.querySelector(".endgame_dscore");
+
 // EVENTLISTENERS
 
 playButton.addEventListener("click", () => {
@@ -512,6 +517,8 @@ function stand(firstCard) {
 
   firstCard.classList.remove("card_backside");
 
+  cloneToEndgameBox();
+
   determineWinner();
 }
 
@@ -552,6 +559,12 @@ function determineWinner() {
     console.log("dealer wins, you went bust");
     document.querySelector("#player_bust").classList.remove("hide");
   }
+}
+
+function cloneToEndgameBox() {
+  console.log("cloning");
+  endgameDScore.textContent = dealerScore;
+  endgamePScore.textContent = playerScore;
 }
 
 function resetGame() {
