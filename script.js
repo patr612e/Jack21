@@ -517,9 +517,8 @@ function stand(firstCard) {
 
   firstCard.classList.remove("card_backside");
 
-  cloneToEndgameBox();
-
   determineWinner();
+  cloneToEndgameBox();
 }
 
 function determineWinner() {
@@ -563,8 +562,12 @@ function determineWinner() {
 
 function cloneToEndgameBox() {
   console.log("cloning");
+  console.log("hej");
   endgameDScore.textContent = dealerScore;
   endgamePScore.textContent = playerScore;
+
+  let clone = playerCardsPos.cloneNode(true);
+  endgamePCards.appendChild(clone);
 }
 
 function resetGame() {
@@ -595,6 +598,12 @@ function resetGame() {
 
   playerScorePos.textContent = 0;
   dealerScorePos.textContent = 0;
+
+  endgameDScore.textContent = 0;
+  endgamePScore.textContent = 0;
+
+  endgameDCards.innerHTML = "";
+  endgamePCards.innerHTML = "";
 
   document.querySelectorAll(".endgame").forEach(window => {
     window.classList.add("hide");
