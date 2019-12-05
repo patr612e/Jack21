@@ -5,7 +5,7 @@
 const playButton = document.querySelector("#play");
 const hitButton = document.querySelector("#hit");
 const standButton = document.querySelector("#stand");
-const resetButton = document.querySelector("#reset");
+const resetButton = document.querySelectorAll(".reset");
 
 const playerCardsPos = document.querySelector("#playercards");
 const playerScorePos = document.querySelector("#playerscore_printed");
@@ -34,8 +34,10 @@ playButton.addEventListener("click", () => {
 
 hitButton.addEventListener("click", dealPlayerCard);
 standButton.addEventListener("click", standClicked);
-resetButton.addEventListener("click", resetGame);
 
+resetButton.forEach(btn => {
+  btn.addEventListener("click", resetGame);
+});
 // ARRAYS
 
 let dealerCards = [];
@@ -456,6 +458,7 @@ function calcPlayerScore() {
 function bustCheck() {
   if (playerScore > 21) {
     console.log("dealer wins, you went bust!");
+    document.querySelector("#player_bust").classList.remove("hide");
   }
 
   //You went bust window
@@ -486,8 +489,14 @@ function stand(firstCard) {
   hitButton.classList.add("disabled_button");
   standButton.disabled = true;
   standButton.classList.add("disabled_button");
-  resetButton.disabled = false;
-  resetButton.classList.remove("disabled_button");
+
+  resetButton.forEach(btn => {
+    btn.classList.remove("disabled_button");
+    btn.disabled = false;
+  });
+
+  // resetButton.disabled = false;
+  // resetButton.classList.remove("disabled_button");
 
   // draw a card until score is 17 or more
 
@@ -511,26 +520,37 @@ function determineWinner() {
 
   if (dealerScore > 21 && playerScore <= 21) {
     console.log("player wins, dealer went bust");
+    document.querySelector("#dealer_bust").classList.remove("hide");
   }
 
   if (dealerScore > playerScore && dealerScore <= 21 && playerScore <= 21) {
     console.log("dealer wins, dealer has the highest hand");
+    document.querySelector("#dealer_wins").classList.remove("hide");
   }
 
-  if (dealerScore == playerScore && playerScore < 21 && dealerScore < 21 && !(dealerScore === 21)) {
+  if (dealerScore == playerScore && playerScore < 21 && dealerScore < 21) {
     console.log("it's a tie!");
+    document.querySelector("#tie").classList.remove("hide");
   }
 
   if (playerScore > dealerScore && playerScore <= 21) {
     console.log("player wins, player has the highest hand");
+    document.querySelector("#player_wins").classList.remove("hide");
   }
 
   if (dealerScore === 21) {
     console.log("dealer wins, dealer has blackjack");
+    document.querySelector("#dealer_blackjack").classList.remove("hide");
+  }
+
+  if (playerScore === 21) {
+    console.log("player wins, player has blackjack!");
+    document.querySelector("#player_blackjack").classList.remove("hide");
   }
 
   if (playerScore > 21) {
     console.log("dealer wins, you went bust");
+    document.querySelector("#player_bust").classList.remove("hide");
   }
 }
 
@@ -563,14 +583,18 @@ function resetGame() {
   playerScorePos.textContent = 0;
   dealerScorePos.textContent = 0;
 
+  document.querySelectorAll(".endgame").forEach(window => {
+    window.classList.add("hide");
+  });
+
   // hide class on play again windows
 
   // enable buttons, remove classes
 
   playButton.disabled = false;
   playButton.classList.remove("disabled_button");
-  hitButton.disabled = false;
-  hitButton.classList.remove("disabled_button");
-  standButton.disabled = false;
-  standButton.classList.remove("disabled_button");
+  hitButton.disabled = true;
+  hitButton.classList.add("disabled_button");
+  standButton.disabled = true;
+  standButton.classList.add("disabled_button");
 }
