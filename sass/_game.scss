@@ -11,6 +11,11 @@
   height: auto;
 
   background-color: rgb(0, 101, 0);
+
+  background-image: url(static/svg/cards/table.svg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 #dealercards {
@@ -136,12 +141,9 @@
     grid-template-columns: 4fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     width: 70vw;
+    max-width: 800px;
     height: auto;
-    background-color: rgb(0, 101, 0);
-    // background-image: url(static/svg/cards/table.svg);
-    // background-size: 100%;
-    // background-position: center center;
-    // background-repeat: no-repeat;
+    // background-color: rgb(0, 101, 0);
   }
 
   #deck {
