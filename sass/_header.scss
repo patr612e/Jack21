@@ -21,6 +21,7 @@ html {
 #logo1 {
   padding-top: 1rem;
   justify-self: center;
+  cursor: pointer;
 }
 #mobil-header {
   display: grid;
@@ -51,11 +52,13 @@ html {
         font-family: "Rubik", sans-serif;
         font-weight: 700;
         font-size: 1.1rem;
+        cursor: pointer;
       }
     }
     #logo2 {
       justify-self: left;
       height: 5rem;
+      cursor: pointer;
     }
   }
 }

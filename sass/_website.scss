@@ -18,7 +18,7 @@
     background: url("static/Backgrounds/Fugle_1.svg") left center;
     background-size: cover;
     animation: bird-animation 0.4s steps(4) infinite,
-      move-animatiion 7s infinite linear;
+      move-animatiion 14s infinite linear;
   }
 
   @keyframes bird-animation {
@@ -30,8 +30,14 @@
     }
   }
   @keyframes move-animatiion {
+    50% {
+      transform: translateX(110vw) translateY(-50px);
+    }
+    50% {
+      transform: translateX(110vw) translateY(100px);
+    }
     100% {
-      transform: translateX(110vw) translateY(50px);
+      transform: translateX(110vw) translateY(100px);
     }
   }
   #game-background-mobil {
