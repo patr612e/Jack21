@@ -1,15 +1,39 @@
+/*Mobile media query */
+
 #lumberjack-svg {
   background-image: url(/static/svg/lumberjack.svg);
-  width: 50vw;
-  height: 40vw;
   position: absolute;
   background-repeat: no-repeat;
   background-size: 100%;
+  z-index: 1;
+  width: 43vw;
+  height: 46.5vw;
+  right: 0vw;
+  bottom: 0vw;
+  pointer-events: none;
+}
+
+#trees-svg {
+  background-image: url(/static/svg/trees.svg);
+
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  z-index: -1;
+  width: 80vw;
+  height: 46.5vw;
+  left: 0vw;
+  bottom: 0vw;
 }
 
 #info-box {
   background-color: $matterhorn;
   border-radius: 10px;
+  margin: 2em 1em;
+
+  div {
+    padding: 1.5em 1em;
+  }
 
   h1,
   h2,
@@ -17,8 +41,209 @@
     color: $ivory;
   }
 
-  button {
-    background-color: $valencia;
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  p {
+    padding: 1.2em 2em;
+    font-size: 1em;
+  }
+
+  input {
+    width: 15em;
+    height: 2.5em;
+    background-color: $ivory;
+    border-radius: 15px;
+    border: 2px solid $valencia;
+    margin: auto;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2em;
+  }
+
+  label {
+    color: $matterhorn;
+    pointer-events: none;
+    transform-origin: 0 100%;
+    opacity: 0.7;
+    transition: transform 0.25s linear;
+    position: absolute;
+    transform: translate(34vw, -10vw);
+  }
+
+  input:not(:placeholder-shown) + label {
+    transform: translate(37vw, -20vw);
+    opacity: 1;
     color: $ivory;
+  }
+
+  input:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: red;
+    background-position-x: calc(100% - 16px);
+    background-position-y: 50%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    color: red;
+    background-image: $error;
+    animation: shake 0.13s 2 backwards;
+  }
+
+  .instruction-firstname {
+    transition: 0.6s;
+    color: red;
+    padding: 8px;
+    background-color: $ivory;
+    opacity: 0;
+  }
+
+  input:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-firstname {
+    opacity: 1;
+  }
+
+  input:valid:not(:focus) {
+    color: green;
+    border-color: green;
+    background-position-x: calc(100% - 16px);
+    background-position-y: 50%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    color: green;
+    background-image: $error;
+  }
+
+  input:valid:not(:focus) ~ .opacity {
+    opacity: 0;
+  }
+
+  @keyframes shake {
+    50% {
+      transform: translateX(15px);
+    }
+  }
+
+  button {
+    width: 6em;
+    color: $ivory;
+    border-radius: 10px;
+    margin: auto;
+    display: block;
+    margin: 0em auto;
+    background-color: green;
+  }
+
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: $valencia;
+  }
+}
+
+/*Tablet media query */
+
+@media only screen and (min-width: 768px) and (orientation: landscape) {
+  #lumberjack-svg {
+    width: 43vw;
+    height: 47vw;
+    right: -4vw;
+    bottom: 9vw;
+  }
+
+  #trees-svg {
+    width: 89vw;
+    height: 66vw;
+    left: -17vw;
+    bottom: 0vw;
+  }
+
+  #info-box {
+    width: 50em;
+    height: 36em;
+    margin: 3em 5em;
+
+    h1 {
+      font-size: 4em;
+    }
+
+    h2 {
+      font-size: 2.5em;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
+
+    label {
+      transform: translate(35.5vw, -3.5vw);
+    }
+
+    input:not(:placeholder-shown) + label {
+      transform: translate(35.5vw, -7vw);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (orientation: portrait) {
+  #lumberjack-svg {
+    width: 50vw;
+    height: 80vw;
+    right: -5vw;
+    bottom: 15vw;
+  }
+
+  #trees-svg {
+    width: 100vw;
+    height: 100vw;
+    left: -6vw;
+    bottom: 15vw;
+  }
+
+  #info-box {
+    margin: 3em 1em;
+
+    label {
+      transform: translate(43.5vw, -4.5vw);
+    }
+
+    input:not(:placeholder-shown) + label {
+      transform: translate(43.5vw, -10vw);
+    }
+  }
+}
+
+/*Desktop media query */
+
+@media only screen and (min-width: 1025px) {
+  #lumberjack-svg {
+    width: 43vw;
+    height: 47vw;
+    right: 0vw;
+    bottom: 0vw;
+  }
+
+  #trees-svg {
+    width: 80vw;
+    height: 47vw;
+    right: 0vw;
+    left: 0;
+    top: 0vw;
+  }
+
+  #info-box label {
+    transform: translate(24vw, -2.3vw);
+  }
+
+  #info-box input:not(:placeholder-shown) + label {
+    transform: translate(24vw, -4.7vw);
   }
 }
