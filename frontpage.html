@@ -9,29 +9,65 @@
   </head>
 
   <body>
+    <p id="burger">☰</p>
     <nav>
-      <a href="index.html" class="logo"> </a>
+      <a href="index.html" id="logo"> </a>
       <a href="#">Om Os</a>
       <a href="#">Vores Spil</a>
       <a href="#">Ugens vindere</a>
     </nav>
 
     <div id="lumberjack-svg"></div>
+    <div id="trees-svg"></div>
 
     <div id="info-box">
-      <h2>Velkommen til</h2>
-      <h1>Jack21</h1>
+      <div>
+        <h2>Velkommen til</h2>
+        <h1>Jack21</h1>
 
-      <p>
-        I Jack 21 har du mulighed for at vinde en formue gennem vores spændingsrige klassiker. Jackblack har i mange år været en favorit blandt spillere i hele verden. <br />
-        Prøv dine evner af og ikke mindst din lykke!
-      </p>
+        <p>
+          I Jack 21 har du mulighed for at vinde en formue gennem vores spændingsrige klassiker. Jackblack har i mange år været en favorit blandt spillere i hele verden. <br />
+          <br />Prøv dine evner af og ikke mindst din lykke! <br />
+          Indtast dit navn forneden for at starte.
+        </p>
 
-      <input />
+        <input name="firstname" type="text" placeholder="&nbsp;" required class="firstname-formfield" pattern="[A-Za-z]+" />
+        <label>Navn</label>
+        <small class="instruction-firstname">
+          Angiv venligst kun fornavn
+        </small>
+        <br />
 
-      <button>Forsæt</button>
+        <a href="index.html"><button disabled>Forsæt</button></a>
+      </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script>
+      /* Form validation */
+
+      document.querySelector(".firstname-formfield").addEventListener("blur", checkValidity);
+      document.querySelector(".firstname-formfield").addEventListener("keypress", noSpace);
+
+      function checkValidity() {
+        if (document.querySelector("input[name='firstname']").checkValidity() === true) {
+          document.querySelector("button").removeAttribute("disabled");
+          document.querySelector(".instruction-firstname").style.opacity = "0";
+          console.log("Valid");
+        } else {
+          console.log("Invalid");
+          document.querySelector("button").disabled = "true";
+        }
+      }
+
+      function noSpace(event) {
+        console.log("test");
+        let e = event.which || event.keyCode;
+        if (e === 32) {
+          event.preventDefault();
+          document.querySelector(".instruction-firstname").style.opacity = "1";
+        } else {
+        }
+      }
+    </script>
   </body>
 </html>

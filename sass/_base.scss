@@ -2,11 +2,40 @@ $william: #506966;
 $matterhorn: #5c4d4d;
 $ivory: #fcfaef;
 $valencia: #d3504a;
+$check: url(/static/svg/checkmark.svg);
+$error: url(/static/svg/error.svg);
 
 nav {
-  background-color: $william;
-
-  a {
-    color: $ivory;
+  display: none;
+  @media only screen and (min-width: 768px) {
+    background-color: $william;
+    display: block;
+    a {
+      color: $ivory;
+    }
   }
+}
+
+#burger {
+  display: block;
+  position: fixed;
+  right: 5vw;
+  top: 0;
+  font-size: 2em;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.5em;
+}
+
+p {
+  font-size: 1em;
 }
