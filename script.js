@@ -11,10 +11,19 @@ const playerCardsPos = document.querySelector("#playercards");
 const playerScorePos = document.querySelector("#playerscore_printed");
 const dealerCardsPos = document.querySelector("#dealercards");
 const dealerScorePos = document.querySelector("#dealerscore_printed");
+<<<<<<< HEAD
 const infoForDeal = document.querySelector("#deal-info");
 const infoForHit = document.querySelector("#hit-info");
 const infoForStand = document.querySelector("#stand-info");
 let test = true;
+=======
+
+const endgamePCards = document.querySelector(".endgame_pcards");
+const endgameDCards = document.querySelector(".endgame_dcards");
+const endgamePScore = document.querySelector(".endgame_pscore");
+const endgameDScore = document.querySelector(".endgame_dscore");
+
+>>>>>>> formhtml
 // EVENTLISTENERS
 
 playButton.addEventListener("click", () => {
@@ -571,6 +580,23 @@ function determineWinner() {
     console.log("dealer wins, you went bust");
     document.querySelector("#player_bust").classList.remove("hide");
   }
+  cloneToEndgameBox();
+}
+
+function cloneToEndgameBox() {
+  console.log("cloning");
+
+  endgameDScore.textContent = dealerScore;
+  endgamePScore.textContent = playerScore;
+
+  let cloneP = playerCardsPos.cloneNode(true);
+  let cloneD = dealerCardsPos.cloneNode(true);
+
+  console.log(cloneD);
+  endgamePCards.appendChild(cloneP);
+  endgameDCards.appendChild(cloneD);
+
+  console.log(endgameDCards);
 }
 
 function resetGame() {
@@ -604,6 +630,12 @@ function resetGame() {
 
   playerScorePos.textContent = 0;
   dealerScorePos.textContent = 0;
+
+  endgameDScore.textContent = 0;
+  endgamePScore.textContent = 0;
+
+  endgameDCards.innerHTML = "";
+  endgamePCards.innerHTML = "";
 
   document.querySelectorAll(".endgame").forEach(window => {
     window.classList.add("hide");
