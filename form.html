@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Form</title>
+    <link rel="stylesheet" href="styles.scss" />
+  </head>
+  <body>
+    <form name="customer-form">
+      <input name="firstname" type="text" placeholder="&nbsp;" required pattern="[A-Za-z]+" class="form-field" />
+      <label>Navn</label>
+      <small class="instruction-firstname">
+        Angiv venligst kun fornavn
+      </small>
+
+      <input name="lastname" type="text" placeholder="&nbsp;" required pattern="[A-Za-z]+" autofocus class="form-field" />
+      <label>Efternavn</label>
+      <small class="instruction-lastname">
+        Angiv venligst dit efternavn
+      </small>
+
+      <input name="username" type="text" placeholder="&nbsp;" pattern="[A-Za-z0-9_]{1,15}" required class="form-field" />
+      <label>Brugernavn</label>
+      <small class="instruction-username">
+        Angiv venligst et ledigt brugernavn (1 til 15 tegn)
+      </small>
+
+      <input name="password" type="password" placeholder="&nbsp;" required pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$" class="form-field" />
+      <label>Adgangskode</label>
+      <small class="instruction-password"> Angiv venligst en gyldigt adgangskode (6-12 tegn, minimum et bogstav og tal. Ingen særlige tegn tilladt) </small>
+
+      <input name="passwordconfirm" type="password" placeholder="&nbsp;" required pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$" class="form-field" />
+      <label>Bekræft adgangskode</label>
+      <small class="instruction-passwordconfirm">
+        Angiv venligst den samme adgangskode
+      </small>
+
+      <input name="email" type="email" placeholder="&nbsp;" required class="form-field" />
+      <label>E-Mail</label>
+      <small class="instruction-email">
+        Angiv venligst en korrekt email (skal indeholde @)
+      </small>
+
+      <input name="adress" type="text" placeholder="&nbsp;" required class="form-field" />
+      <label>Adresse</label>
+      <small class="instruction-adress">
+        Angiv venligst din adresse (skal indeholde et tal)
+      </small>
+
+      <input name="zipcode" type="text" placeholder="&nbsp;" required maxlength="4" minlength="4" size="4" pattern="[0-9]*" class="form-field" />
+      <label>Postnr.</label>
+      <small class="instruction-zipcode">
+        Angiv venligst dit postnummer (4 cifre)
+      </small>
+
+      <input name="city" type="text" placeholder="&nbsp;" required class="form-field" />
+      <label>By</label>
+      <small class="instruction-city">
+        Angiv venligst din by
+      </small>
+
+      <input name="phone" type="tel" pattern="[0-9]*" minlength="8" maxlength="8" placeholder="&nbsp;" required class="form-field" />
+      <label>Telefonnr.</label>
+      <small class="instruction-email">
+        Angiv venligst et korrekt telefonnummer (8 cifrer)
+      </small>
+      <button id="submit" disabled>Godkend</button>
+    </form>
+  </body>
+
+  <script>
+    document.querySelector("input[name='firstname']").value = document.querySelector("input[name='firstname']").value;
+
+    const form = document.querySelector("form[name='customer-form']");
+    const formfield = document.querySelectorAll(".form-field");
+
+    form.setAttribute("novalidate", true);
+
+    formfield.forEach(formfield => {
+      formfield.addEventListener("blur", checkValidity);
+    });
+
+    function checkValidity() {
+      let firstNameValidity = document.querySelector("input[name='firstname']").checkValidity();
+      let lastNameValidity = document.querySelector("input[name='lastname']").checkValidity();
+      let passwordValidity = document.querySelector("input[name='password']").checkValidity();
+      let passwordconfirmValidity = passwordMatch();
+      let usernameValidity = document.querySelector("input[name='username']").checkValidity();
+      let adressValidity = document.querySelector("input[name='adress']").checkValidity();
+      let zipcodeValidity = document.querySelector("input[name='zipcode']").checkValidity();
+      let cityValidity = document.querySelector("input[name='city']").checkValidity();
+      let emailValidity = document.querySelector("input[name='email']").checkValidity();
+      let phoneValidity = document.querySelector("input[name='phone']").checkValidity();
+
+      if (
+        firstNameValidity === true &&
+        lastNameValidity === true &&
+        passwordValidity === true &&
+        passwordconfirmValidity === true &&
+        usernameValidity === true &&
+        adressValidity === true &&
+        zipcodeValidity === true &&
+        cityValidity === true &&
+        emailValidity === true &&
+        phoneValidity === true
+      ) {
+        document.querySelector("#submit").removeAttribute("disabled");
+        console.log("Valid");
+      } else {
+        console.log("Invalid");
+        document.querySelector("#submit").disabled = "true";
+      }
+    }
+
+    function passwordMatch() {
+      if (document.querySelector("input[name='password']").value === document.querySelector("input[name='passwordconfirm']").value) {
+        console.log("de matcher");
+        return true;
+      } else {
+        console.log("intet match");
+        return false;
+      }
+    }
+  </script>
+</html>

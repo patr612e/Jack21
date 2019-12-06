@@ -1,0 +1,119 @@
+form[name="customer-form"] {
+  background-color: $matterhorn;
+  display: grid;
+
+  label {
+    color: $matterhorn;
+    pointer-events: none;
+    transform-origin: 0 100%;
+    opacity: 0.7;
+    transition: transform 0.25s linear;
+    transform: translate(0.5vw, -1.7vw);
+  }
+
+  button {
+    width: 6em;
+    color: $ivory;
+    border-radius: 10px;
+    margin: auto;
+    display: block;
+    margin: 0em auto;
+    background-color: green;
+  }
+
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: $valencia;
+  }
+
+  input {
+    background-color: $ivory;
+    color: $matterhorn;
+    border-radius: 6px;
+  }
+
+  input:not(:placeholder-shown) + label {
+    transform: translate(0.5vw, -3.5vw);
+    opacity: 1;
+    color: $ivory;
+  }
+
+  input:invalid:not(:placeholder-shown):not(:focus) {
+    border-color: red;
+    background-position-x: calc(100% - 16px);
+    background-position-y: 50%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    color: red;
+    //background-image: $error;
+    animation: shake 0.13s 2 backwards;
+  }
+
+  input:valid:not(:focus) {
+    border-color: green;
+    background-position-x: calc(100% - 16px);
+    background-position-y: 50%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    color: green;
+    //background-image: $check;
+  }
+
+  @keyframes shake {
+    50% {
+      transform: translateX(15px);
+    }
+  }
+
+  .instruction-firstname,
+  .instruction-lastname,
+  .instruction-username,
+  .instruction-password,
+  .instruction-passwordconfirm,
+  .instruction-adress,
+  .instruction-zipcode,
+  .instruction-city,
+  .instruction-email {
+    transition: 0.3s;
+    opacity: 0;
+    color: red;
+    padding: 6px;
+  }
+
+  input[name="firstname"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-firstname {
+    opacity: 1;
+  }
+
+  input[name="lastname"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-lastname {
+    opacity: 1;
+  }
+
+  input[name="username"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-username {
+    opacity: 1;
+  }
+
+  input[name="password"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-password {
+    opacity: 1;
+  }
+
+  input[name="passwordconfirm"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-passwordconfirm {
+    opacity: 1;
+  }
+
+  input[name="adress"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-adress {
+    opacity: 1;
+  }
+
+  input[name="zipcode"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-zipcode {
+    opacity: 1;
+  }
+
+  input[name="city"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-city {
+    opacity: 1;
+  }
+
+  input[name="email"]:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-email {
+    opacity: 1;
+  }
+}

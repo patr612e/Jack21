@@ -518,7 +518,6 @@ function stand(firstCard) {
   firstCard.classList.remove("card_backside");
 
   determineWinner();
-  cloneToEndgameBox();
 }
 
 function determineWinner() {
@@ -558,16 +557,23 @@ function determineWinner() {
     console.log("dealer wins, you went bust");
     document.querySelector("#player_bust").classList.remove("hide");
   }
+  cloneToEndgameBox();
 }
 
 function cloneToEndgameBox() {
   console.log("cloning");
-  console.log("hej");
+
   endgameDScore.textContent = dealerScore;
   endgamePScore.textContent = playerScore;
 
-  let clone = playerCardsPos.cloneNode(true);
-  endgamePCards.appendChild(clone);
+  let cloneP = playerCardsPos.cloneNode(true);
+  let cloneD = dealerCardsPos.cloneNode(true);
+
+  console.log(cloneD);
+  endgamePCards.appendChild(cloneP);
+  endgameDCards.appendChild(cloneD);
+
+  console.log(endgameDCards);
 }
 
 function resetGame() {
