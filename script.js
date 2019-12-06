@@ -11,19 +11,16 @@ const playerCardsPos = document.querySelector("#playercards");
 const playerScorePos = document.querySelector("#playerscore_printed");
 const dealerCardsPos = document.querySelector("#dealercards");
 const dealerScorePos = document.querySelector("#dealerscore_printed");
-<<<<<<< HEAD
 const infoForDeal = document.querySelector("#deal-info");
 const infoForHit = document.querySelector("#hit-info");
 const infoForStand = document.querySelector("#stand-info");
 let test = true;
-=======
 
 const endgamePCards = document.querySelector(".endgame_pcards");
 const endgameDCards = document.querySelector(".endgame_dcards");
 const endgamePScore = document.querySelector(".endgame_pscore");
 const endgameDScore = document.querySelector(".endgame_dscore");
 
->>>>>>> formhtml
 // EVENTLISTENERS
 
 playButton.addEventListener("click", () => {
