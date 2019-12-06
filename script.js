@@ -11,16 +11,30 @@ const playerCardsPos = document.querySelector("#playercards");
 const playerScorePos = document.querySelector("#playerscore_printed");
 const dealerCardsPos = document.querySelector("#dealercards");
 const dealerScorePos = document.querySelector("#dealerscore_printed");
-
+const infoForDeal = document.querySelector("#deal-info");
+const infoForHit = document.querySelector("#hit-info");
+const infoForStand = document.querySelector("#stand-info");
+let test = true;
 // EVENTLISTENERS
 
 playButton.addEventListener("click", () => {
   playButton.classList.add("disabled_button");
+  infoForDeal.style.display = "none";
 
   setTimeout(dealDealerCard, 300);
   setTimeout(dealPlayerCard, 600);
   setTimeout(dealDealerCard, 900);
   setTimeout(dealPlayerCard, 1200);
+  if (test === true) {
+    setTimeout(function() {
+      infoForHit.style.display = "block";
+    }, 1500);
+    setTimeout(function() {
+      infoForStand.style.display = "block";
+    }, 1500);
+    test = false;
+  } else {
+  }
 
   playButton.disabled = true;
 
@@ -320,6 +334,9 @@ let playerScore;
 let dealerScore;
 let visibleDealerScore;
 
+//USER INFO
+infoForDeal.style.display = "block";
+
 // DEALER SIDE
 
 function dealDealerCard() {
@@ -480,6 +497,8 @@ function standClicked() {
   // og find card
 
   stand(firstCard);
+  infoForStand.style.display = "none";
+  infoForHit.style.display = "none";
 }
 
 function stand(firstCard) {
@@ -567,6 +586,9 @@ function resetGame() {
     deck.push(playerCards[i]);
     playerCards.splice(i, 1);
     i--;
+
+    infoForStand.style.display = "none";
+    infoForHit.style.display = "none";
   }
 
   // reset scores
