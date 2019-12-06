@@ -60,70 +60,72 @@
         </div>
       </div>
      
-      <div id="winner-screen-container"></div>
-      <div id="Winner-screen">
-        <h1>
-          Tillykke!
-        </h1>
-        <p>Du har vundet en omgang Blackjack!</p>
-        <p>Er det talent vi kan fornemme?</p>
-        <p>
-          Tilmeld dig nedenfor og optjen rigtige penge næste gang du vinder en
-          intens omgang Blackjack.
-        </p>
-        <p>
-          Held og lykke!
-        </p>
-        <div id="buttons-container">
-          <button id="tilmeld-button" type="button">Tilmeld</button>
-          <button id="replay-knap" type="button">
-            <img src="static/Backgrounds/replay.svg" alt="replay" />
-          </button>
-        </div>
-      </div>
-
       
+
+
+
 
       <div class="endgame hide" id="player_bust">
         <h1 class="endgame_result">You went bust!</h1>
         <p class="endgame_text">Dealer wins... Your score exceeded 21...</p>
-        <button class="reset">PLAY AGAIN</button>
+        <div class="button-container">
+        <button class="sign-button">Tilmeld</button>
+        <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+      </div>
       </div>
 
       <div class="endgame hide" id="dealer_bust">
           <h1 class="endgame_result">Dealer went bust!</h1>
           <p class="endgame_text">You win... The dealer's score exceeded 21...</p>
-          <button class="reset">PLAY AGAIN</button>
+          <div class="button-container">
+          <button class="sign-button" >Tilmeld</button>
+          <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+          </div>
         </div>
 
        <div class="endgame hide" id="dealer_wins">
             <h1 class="endgame_result">Dealer wins!</h1>
             <p class="endgame_text">Dealer has the highest hand...</p>
-            <button class="reset">PLAY AGAIN</button>
+            <div class="button-container">
+            <button class="sign-button" >Tilmeld</button>
+            <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+            </div>
           </div>
 
           <div class="endgame hide" id="tie">
               <h1 class="endgame_result">It's a tie!</h1>
               <p class="endgame_text"></p>
-              <button class="reset">PLAY AGAIN</button>
+              <div class="button-container">
+              <button class="sign-button" >Tilmeld</button>
+              <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+              </div>
             </div>
 
               <div class="endgame hide" id="player_wins">
                   <h1 class="endgame_result">You win!</h1>
                   <p class="endgame_text">You had the highest hand... </p>
-                  <button class="reset">PLAY AGAIN</button>
+                  <div class="button-container">
+                  <button class="sign-button" >Tilmeld</button>
+                  <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+                  </div>
                 </div>
 
                 <div class="endgame hide" id="player_blackjack">
                     <h1 class="endgame_result">You win!</h1>
                     <p class="endgame_text">You have blackjack... </p>
-                    <button class="reset">PLAY AGAIN</button>
+                    <div class="button-container">
+                    <button class="sign-button" >Tilmeld</button>
+                    <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+                    </div>
                   </div>
 
                 <div class="endgame hide" id="dealer_blackjack">
                     <h1 class="endgame_result">Dealer wins!</h1>
                     <p class="endgame_text">Dealer has blackjack...</p>
-                    <button class="reset">PLAY AGAIN</button>
+                    <div class="button-container">
+                    <button class="sign-button">Tilmeld</button>
+                    <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+                    </div>
                   </div>
 
     <div id="game-background-mobil "></div>
