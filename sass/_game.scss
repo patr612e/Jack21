@@ -1,3 +1,8 @@
+.disabled_button {
+  background-color: rgb(218, 218, 218);
+  color: rgb(142, 142, 142);
+}
+
 .button-container {
   width: 100%;
   display: grid;
@@ -22,11 +27,6 @@
   height: 3rem;
   margin: 1rem;
   background: grey;
-}
-
-.disabled_button {
-  background-color: rgb(218, 218, 218);
-  color: rgb(142, 142, 142);
 }
 
 #playtable {
