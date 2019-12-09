@@ -1,5 +1,31 @@
 /*Mobile media query */
 
+#label-container {
+  position: relative;
+}
+label {
+  position: absolute;
+  top: 2rem;
+  left: 44vw;
+  right: 50vw;
+}
+@media only screen and (max-width: 400px) {
+  label {
+    left: 37vw;
+  }
+}
+
+input:not(:placeholder-shown) + label {
+  transform: translatey(-2rem);
+  opacity: 1;
+  color: $ivory;
+}
+input:focus + label {
+  transform: translatey(-2rem);
+  opacity: 1;
+  color: $ivory;
+}
+
 #lumberjack-svg {
   background-image: url(/static/svg/lumberjack.svg);
   position: absolute;
@@ -20,8 +46,8 @@
   background-repeat: no-repeat;
   background-size: 100%;
   z-index: -1;
-  width: 80vw;
-  height: 46.5vw;
+  width: 60vw;
+
   left: 0vw;
   bottom: 0vw;
 }
@@ -70,22 +96,6 @@
     margin: 0 auto;
     text-align: center;
     font-size: 1.2em;
-  }
-
-  label {
-    color: $matterhorn;
-    pointer-events: none;
-    transform-origin: 0 100%;
-    opacity: 0.7;
-    transition: transform 0.25s linear;
-    position: absolute;
-    transform: translate(37vw, -10vw);
-  }
-
-  input:not(:placeholder-shown) + label {
-    transform: translate(37vw, -20vw);
-    opacity: 1;
-    color: $ivory;
   }
 
   input:invalid:not(:placeholder-shown):not(:focus) {
@@ -149,7 +159,9 @@
   }
 }
 
-@media (orientation: landscape) {
+/*Tablet media query */
+
+@media only screen and (min-width: 881px) and (orientation: landscape) {
   #trees-svg {
     width: 77vw;
     height: 54.5vw;
@@ -180,27 +192,20 @@
       padding: 0.5em 2em 2em 2em;
     }
 
-    label {
-      transform: translate(33.5vw, -5vw);
-    }
-
     input {
       font-size: 1em;
     }
-    input:not(:placeholder-shown) + label {
-      transform: translate(33.5vw, -10vw);
-    }
   }
-}
-
-/*Tablet media query */
-
-@media only screen and (min-width: 768px) and (orientation: landscape) {
+  label {
+    position: absolute;
+    top: 1rem;
+    left: 21rem;
+  }
   #lumberjack-svg {
     width: 43vw;
     height: 47vw;
     right: -4vw;
-    bottom: 7vw;
+    bottom: 0vw;
   }
 
   #trees-svg {
@@ -226,68 +231,38 @@
     p {
       font-size: 1.5em;
     }
-
-    label {
-      transform: translate(33vw, -3.3vw);
+    #lumberjack-svg {
+      width: 50vw;
+      height: 80vw;
+      right: -5vw;
+      bottom: 15vw;
     }
 
-    input:not(:placeholder-shown) + label {
-      transform: translate(33vw, -6vw);
-    }
-  }
-}
-
-@media only screen and (min-width: 768px) and (orientation: portrait) {
-  #lumberjack-svg {
-    width: 50vw;
-    height: 80vw;
-    right: -5vw;
-    bottom: 15vw;
-  }
-
-  #trees-svg {
-    width: 100vw;
-    height: 100vw;
-    left: -6vw;
-    bottom: 15vw;
-  }
-
-  #info-box {
-    margin: 2em 1em;
-
-    label {
-      transform: translate(43.5vw, -4.5vw);
+    #trees-svg {
+      width: 100vw;
+      height: 100vw;
+      left: -6vw;
+      bottom: 15vw;
     }
 
-    input:not(:placeholder-shown) + label {
-      transform: translate(43.5vw, -10vw);
+    #info-box {
+      margin: 2em 1em;
+    }
+    #lumberjack-svg {
+      width: 43vw;
+      height: 47vw;
+      right: 0vw;
+      bottom: 0vw;
+    }
+
+    #trees-svg {
+      width: 80vw;
+      height: 47vw;
+      right: 0vw;
+      left: 0;
+      top: 0vw;
     }
   }
 }
 
 /*Desktop media query */
-
-@media only screen and (min-width: 1025px) {
-  #lumberjack-svg {
-    width: 43vw;
-    height: 47vw;
-    right: 0vw;
-    bottom: 0vw;
-  }
-
-  #trees-svg {
-    width: 80vw;
-    height: 47vw;
-    right: 0vw;
-    left: 0;
-    top: 0vw;
-  }
-
-  #info-box label {
-    transform: translate(22vw, -2.1vw);
-  }
-
-  #info-box input:not(:placeholder-shown) + label {
-    transform: translate(22vw, -4.1vw);
-  }
-}

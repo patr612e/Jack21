@@ -40,16 +40,17 @@
           <br />Prøv dine evner af og ikke mindst din lykke! <br />
           Indtast dit navn forneden for at starte.
         </p>
-
-        <input
-          name="firstname"
-          type="text"
-          placeholder="&nbsp;"
-          required
-          class="firstname-formfield"
-          pattern="[A-Za-z]+"
-        />
-        <label>Navn</label>
+        <div id="label-container">
+          <input
+            name="firstname"
+            type="text"
+            placeholder="&nbsp;"
+            required
+            class="firstname-formfield"
+            pattern="[A-Za-z]+"
+          />
+          <label>Navn</label>
+        </div>
         <small class="instruction-firstname">
           Angiv venligst kun fornavn
         </small>
@@ -64,7 +65,7 @@
 
       document
         .querySelector(".firstname-formfield")
-        .addEventListener("blur", checkValidity);
+        .addEventListener("keypress", checkValidity);
       document
         .querySelector(".firstname-formfield")
         .addEventListener("keypress", noSpace);
