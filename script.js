@@ -346,6 +346,7 @@ infoForDeal.style.display = "block";
 // DEALER SIDE
 
 function dealDealerCard() {
+  console.log("deal dealer card");
   let card = deck[Math.floor(Math.random() * deck.length)];
   let location = deck.indexOf(card);
   deck.splice(location, 1);
@@ -529,20 +530,31 @@ function stand(firstCard) {
   // resetButton.classList.remove("disabled_button");
 
   // draw a card until score is 17 or more
+  drawACard();
 
-  while (dealerScore < 17) {
-    dealDealerCard();
+  function drawACard() {
+    if (dealerScore < 17) {
+      dealDealerCard();
+    }
+    if (dealerScore < 17) {
+      setTimeout(drawACard, 1000);
+    } else {
+      // turn (show) first card
+      setTimeout(function() {
+        firstCard.classList.remove("card_backside");
+        dealerScorePos.textContent = dealerScore;
+        determineWinner();
+      }, 1000);
+    }
   }
 
+  /*
+  while (dealerScore < 17) {
+    //setTimeout(dealDealerCard, 1000);
+    dealDealerCard();
+  }
+*/
   // reveal dealerScore
-
-  dealerScorePos.textContent = dealerScore;
-
-  // turn (show) first card
-
-  firstCard.classList.remove("card_backside");
-
-  determineWinner();
 }
 
 function determineWinner() {
