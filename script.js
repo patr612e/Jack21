@@ -481,7 +481,12 @@ function calcPlayerScore() {
 function bustCheck() {
   if (playerScore > 21) {
     console.log("dealer wins, you went bust!");
-    document.querySelector("#player_bust").classList.remove("hide");
+    hitButton.disabled = true;
+    standButton.disabled = true;
+
+    setTimeout(function() {
+      document.querySelector("#player_bust").classList.remove("hide");
+    }, 1500);
   }
 
   //You went bust window
@@ -545,37 +550,57 @@ function determineWinner() {
 
   if (dealerScore > 21 && playerScore <= 21) {
     console.log("player wins, dealer went bust");
-    document.querySelector("#dealer_bust").classList.remove("hide");
+    setTimeout(function() {
+      document.querySelector("#dealer_bust").classList.remove("hide");
+    }, 1500);
   }
 
   if (dealerScore > playerScore && dealerScore <= 21 && playerScore <= 21) {
     console.log("dealer wins, dealer has the highest hand");
-    document.querySelector("#dealer_wins").classList.remove("hide");
+
+    setTimeout(function() {
+      document.querySelector("#dealer_wins").classList.remove("hide");
+    }, 1500);
   }
 
   if (dealerScore == playerScore && playerScore < 21 && dealerScore < 21) {
     console.log("it's a tie!");
-    document.querySelector("#tie").classList.remove("hide");
+
+    setTimeout(function() {
+      document.querySelector("#tie").classList.remove("hide");
+    }, 1500);
   }
 
   if (playerScore > dealerScore && playerScore <= 21) {
     console.log("player wins, player has the highest hand");
-    document.querySelector("#player_wins").classList.remove("hide");
+
+    setTimeout(function() {
+      document.querySelector("#player_wins").classList.remove("hide");
+    }, 1500);
   }
 
   if (dealerScore === 21) {
     console.log("dealer wins, dealer has blackjack");
-    document.querySelector("#dealer_blackjack").classList.remove("hide");
+
+    setTimeout(function() {
+      document.querySelector("#dealer_blackjack").classList.remove("hide");
+    }, 1500);
   }
 
   if (playerScore === 21) {
     console.log("player wins, player has blackjack!");
-    document.querySelector("#player_blackjack").classList.remove("hide");
+
+    setTimeout(function() {
+      document.querySelector("#player_blackjack").classList.remove("hide");
+    }, 1500);
   }
 
   if (playerScore > 21) {
     console.log("dealer wins, you went bust");
-    document.querySelector("#player_bust").classList.remove("hide");
+
+    setTimeout(function() {
+      document.querySelector("#player_bust").classList.remove("hide");
+    }, 1500);
   }
   cloneToEndgameBox();
 }
@@ -622,8 +647,8 @@ function resetGame() {
 
   // reset DOM
 
-  dealerCardsPos.innerHTML = 0;
-  playerCardsPos.innerHTML = 0;
+  dealerCardsPos.innerHTML = "";
+  playerCardsPos.innerHTML = "";
 
   playerScorePos.textContent = 0;
   dealerScorePos.textContent = 0;
