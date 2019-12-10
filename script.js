@@ -485,9 +485,16 @@ function bustCheck() {
     hitButton.disabled = true;
     standButton.disabled = true;
 
+    // turn (show) first card
+    setTimeout(function() {
+      let firstCard = dealerCardsPos.firstElementChild;
+      firstCard.classList.remove("card_backside");
+      dealerScorePos.textContent = dealerScore;
+    }, 1000);
+
     setTimeout(function() {
       document.querySelector("#player_bust").classList.remove("hide");
-    }, 1500);
+    }, 2000);
   }
 
   //You went bust window
