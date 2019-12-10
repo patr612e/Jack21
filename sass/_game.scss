@@ -106,8 +106,8 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
-  transition: 2s;
-  opacity: 0;
+  transition: 0.4s;
+  opacity: 1;
 }
 
 // .endgame button {
@@ -170,7 +170,8 @@
 // }
 
 .hide {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
 }
 #play_buttons {
   display: grid;
