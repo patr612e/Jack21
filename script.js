@@ -25,7 +25,7 @@ const endgameDScore = document.querySelector(".endgame_dscore");
 
 playButton.addEventListener("click", () => {
   playButton.classList.add("disabled_button");
-  infoForDeal.style.display = "none";
+  infoForDeal.style.visibility = "hidden";
 
   setTimeout(dealDealerCard, 300);
   setTimeout(dealPlayerCard, 600);
@@ -33,10 +33,10 @@ playButton.addEventListener("click", () => {
   setTimeout(dealPlayerCard, 1200);
   if (test === true) {
     setTimeout(function() {
-      infoForHit.style.display = "block";
+      infoForHit.style.visibility = "visible";
     }, 1500);
     setTimeout(function() {
-      infoForStand.style.display = "block";
+      infoForStand.style.visibility = "visible";
     }, 1500);
     test = false;
   } else {
@@ -341,7 +341,7 @@ let dealerScore;
 let visibleDealerScore;
 
 //USER INFO
-infoForDeal.style.display = "block";
+infoForDeal.style.visibility = "visible";
 
 // DEALER SIDE
 
@@ -565,8 +565,8 @@ function standClicked() {
   // og find card
 
   stand(firstCard);
-  infoForStand.style.display = "none";
-  infoForHit.style.display = "none";
+  infoForStand.style.visibility = "hidden";
+  infoForHit.style.visibility = "hidden";
 }
 
 function stand(firstCard) {
@@ -703,8 +703,8 @@ function resetGame() {
     playerCards.splice(i, 1);
     i--;
 
-    infoForStand.style.display = "none";
-    infoForHit.style.display = "none";
+    infoForStand.style.visibility = "hidden";
+    infoForHit.style.visibility = "hidden";
   }
 
   // reset scores
