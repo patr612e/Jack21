@@ -53,10 +53,15 @@
             <!-- <button class="reset disabled_button" disabled>RESET</button> -->
           </div>
           
-              <div  class="box" id="cards-info"><p>←The deck</p></div>
-              <div class="box" id="deal-info"><p>←Start by dealing cards</p></div>
-              <div class="box" id="hit-info"><p>←Add card to hand</p></div>
-              <div  class="box" id="stand-info"><p>←Compare scores</p></div>
+            <!-- <div class="deck_guide">
+              <div class="box" id="cards-info"><p>←The deck</p></div>
+            </div> -->
+
+              <div class="guides">
+                <div class="box" id="deal-info"><p>←Start by dealing</p></div>
+                <div class="box" id="hit-info"><p>←Add card to hand</p></div>
+                <div  class="box" id="stand-info"><p>←Keep hand</p></div>
+            </div>
     
         </div>
       </div>
@@ -67,8 +72,8 @@
 
 
       <div class="endgame hide" id="player_bust">
-        <h1 class="endgame_result">You went bust!</h1>
-        <p class="endgame_text">Dealer wins... Your score exceeded 21...</p>
+        <h1 class="endgame_result">Dealer wins!</h1>
+        <p class="endgame_text">You went bust... Your score exceeded 21...</p>
         <div class="endgame_summary">
             <div class="endgame_dcards"></div>
             <div class="endgame_dscore">999</div>
@@ -83,8 +88,8 @@
       </div>
 
       <div class="endgame hide" id="dealer_bust">
-          <h1 class="endgame_result">Dealer went bust!</h1>
-          <p class="endgame_text">You win... The dealer's score exceeded 21...</p>
+          <h1 class="endgame_result">You win!</h1>
+          <p class="endgame_text">Dealer went bust... The dealer's score exceeded 21...</p>
           <div class="endgame_summary">
               <div class="endgame_dcards"></div>
               <div class="endgame_dscore">999</div>

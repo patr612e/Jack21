@@ -7,6 +7,23 @@
   grid-column: 1/2;
   grid-row: 4/5;
 }
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.card {
+  width: calc(6vw + 30px);
+  height: calc(9.6vw + 45px);
+
+  // width: 6vw;
+  // height: 9.6vw;
+  border-radius: 5px;
+  margin: 4px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
 .reset {
   grid-column: 1/2;
 
@@ -39,7 +56,7 @@
 #playtable {
   display: grid;
   grid-template-columns: 4fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 200px 200px 1fr;
   width: 100%;
   height: auto;
 }
@@ -85,22 +102,37 @@
   // background-color: burlywood;
 }
 
-#dealerscore_printed {
-  font-size: calc(15px * 0.8vw);
-  font-size: 50px;
+#deck {
+  grid-row: 3/4;
+  grid-column: 2/3;
+
+  width: calc(6vw + 30px);
+  height: calc(9.6vw + 45px);
+  background-image: url(static/svg/cards/card.svg);
+  background-size: 100%;
+  margin: 10px;
+
   justify-self: center;
   align-self: center;
 }
 
-#playerscore_printed {
-  font-size: 50px;
+#dealerscore_printed {
+  font-size: 40px;
   justify-self: center;
   align-self: center;
+  margin: 20px;
+}
+
+#playerscore_printed {
+  font-size: 40px;
+  justify-self: center;
+  align-self: center;
+  margin: 20px;
 }
 
 .endgame {
   position: absolute;
-  top: 30%;
+  top: 11vh;
   left: 0;
 
   width: 100%;
@@ -175,12 +207,12 @@
   display: none;
 }
 #play_buttons {
-  display: grid;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 
   grid-column: 1/2;
   grid-row: 3/4;
-  justify-items: center;
-  align-items: center;
 }
 
 @media screen and (min-width: 700px) {
@@ -195,7 +227,7 @@
     display: grid;
     grid-template-columns: 4fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    width: 70vw;
+    width: 80vw;
     max-width: 800px;
     height: auto;
     // background-color: rgb(0, 101, 0);
@@ -229,15 +261,19 @@
     width: 600px;
     height: 400px;
   }
-}
 
-.card {
-  width: 6vw;
-  height: 9.6vw;
-  border-radius: 5px;
-  margin: 4px;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  #dealerscore_printed {
+    font-size: 50px;
+  }
+
+  #playerscore_printed {
+    font-size: 50px;
+  }
+
+  .card {
+    width: 6vw;
+    height: 9.6vw;
+  }
 }
 
 .card_backside {
@@ -245,14 +281,14 @@
 }
 
 #play_buttons button {
-  padding: 5px;
+  padding: 2px 4px;
   border-radius: 2px;
   background-color: rgb(143, 143, 143);
   color: black;
-  font-size: 20px;
-  margin: 10px 0px;
+  margin: 15px 0px;
   cursor: pointer;
-  min-width: 8vw;
+  width: 90px;
+  max-height: 40px;
 }
 #play_buttons [disabled] {
   background-color: rgb(218, 218, 218);
