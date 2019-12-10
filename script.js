@@ -373,6 +373,30 @@ function addDealerCardToDOM(card) {
 
   dealerCardsPos.appendChild(domcard);
 
+  let ca = domcard.getBoundingClientRect();
+  let dk = document.querySelector("#deck").getBoundingClientRect();
+
+  //style transform add
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
+
+  setTimeout(function() {
+    //add transition
+    domcard.style.transition = "all 1s";
+
+    //style transform remove
+    domcard.style.transform = `scaleX(-1)`;
+  }, 200);
+
+  setTimeout(function() {
+    domcard.style.transform = "scaleX(-1) rotateY(180deg)";
+    domcard.style.backgroundImage = `url('${card.image}')`;
+  }, 200);
+
+  setTimeout(function() {
+    domcard.style.transform = "none";
+    domcard.style.transition = "none";
+  }, 3600);
+
   console.table(dealerCards);
 
   let forsteKort = dealerCardsPos.firstElementChild;
@@ -434,11 +458,36 @@ function dealPlayerCard() {
 function addPlayerCardToDOM(card) {
   let domcard = document.createElement("div");
   domcard.classList.add("card");
-  domcard.style.backgroundImage = `url('${card.image}')`;
+  domcard.style.backgroundImage = `url('/svg/cards/card.svg')`;
 
   // append to DOM
 
   playerCardsPos.appendChild(domcard);
+
+  //get bounding clientRect
+  let ca = domcard.getBoundingClientRect();
+  let dk = document.querySelector("#deck").getBoundingClientRect();
+
+  //style transform add
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
+
+  setTimeout(function() {
+    //add transition
+    domcard.style.transition = "all 1s";
+
+    //style transform remove
+    domcard.style.transform = `scaleX(-1)`;
+  }, 200);
+
+  setTimeout(function() {
+    domcard.style.transform = "scaleX(-1) rotateY(180deg)";
+    domcard.style.backgroundImage = `url('${card.image}')`;
+  }, 200);
+
+  setTimeout(function() {
+    domcard.style.transform = "none";
+    domcard.style.transition = "none";
+  }, 3600);
 
   console.table(playerCards);
 
