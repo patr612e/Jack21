@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Jack21</title>
+    <link rel="stylesheet" href="styles.scss" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    
+  .animation{
+    position: absolute;
+    transition: 2s;
+    left: 72vw;
+    top: 36vw;
+}
+  </style>
+  <body>
+      <div id="game-background">
+    <header id="menu">
+      <div id="mobil-header">
+        <img src="static/Backgrounds/burger menu.svg" alt="burgermenu" />
+        <a href="index.html"><img id="logo1" src="static/Backgrounds/Logo.svg" alt="logo" /></a>
+        <div id="ikkeses"></div>
+      </div>
+      <div id="pc-header">
+        <ul>
+            <a href="index.html"><img id="logo2" src="static/Backgrounds/Logo.svg" alt="logo" /></a>
+          <li>Om os</li>
+          <li>Nyheder</li>
+          <li>Ugens vindere</li>
+        </ul>
+      </div>
+    </header>
+  
+      <div id="fugl"></div>
+
+      
+      <div id="pt_container">
+        <div id="playtable">
+            <div id="background"></div>
+          <div id="dealercards"></div>
+          <div id="dealerscore">
+            <h1 id="dealerscore_printed">0</h1>
+          </div>
+          <div id="playercards"></div>
+          <div id="playerscore">
+            <h1 id="playerscore_printed">0</h1>
+          </div>
+          <div id="deck">
+            <div id="deck_pile"></div>
+          </div>
+          <div id="play_buttons">
+            <button  id="play">DEAL</button>
+            <button id="hit" class="disabled_button" disabled>HIT</button>
+            <button  id="stand" class="disabled_button" disabled>STAND</button>
+            <!-- <button class="reset disabled_button" disabled>RESET</button> -->
+          </div>
+          
+            <!-- <div class="deck_guide">
+              <div class="box" id="cards-info"><p>←The deck</p></div>
+            </div> -->
+
+              <div class="guides">
+                <div class="box" id="deal-info"><p>←Start by dealing</p></div>
+                <div class="box" id="hit-info"><p>←Add card to hand</p></div>
+                <div  class="box" id="stand-info"><p>←Keep hand</p></div>
+            </div>
+    
+        </div>
+      </div>
+     
+      
+
+
+
+
+      <div class="endgame hide" id="player_bust">
+        <h1 class="endgame_result">Dealer wins!</h1>
+        <p class="endgame_text">You went bust... Your score exceeded 21...</p>
+        <div class="endgame_summary">
+            <div class="endgame_dcards"></div>
+            <div class="endgame_dscore">999</div>
+            <div class="endgame_pcards"></div>
+            <div class="endgame_pscore">999</div>
+          </div>
+       
+        <div class="button-container">
+        <a href="form.html"><button class="sign-button" >Tilmeld</button></a>
+        <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+      </div>
+      </div>
+
+      <div class="endgame hide" id="dealer_bust">
+          <h1 class="endgame_result">You win!</h1>
+          <p class="endgame_text">Dealer went bust... The dealer's score exceeded 21...</p>
+          <div class="endgame_summary">
+              <div class="endgame_dcards"></div>
+              <div class="endgame_dscore">999</div>
+              <div class="endgame_pcards"></div>
+              <div class="endgame_pscore">999</div>
+            </div>
+         
+          <div class="button-container">
+          <a href="form.html"><button class="sign-button" >Tilmeld</button></a>
+          <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+          </div>
+        </div>
+
+       <div class="endgame hide" id="dealer_wins">
+            <h1 class="endgame_result">Dealer wins!</h1>
+            <p class="endgame_text">Dealer has the highest hand...</p>
+            <div class="endgame_summary">
+                <div class="endgame_dcards"></div>
+                <div class="endgame_dscore">999</div>
+                <div class="endgame_pcards"></div>
+                <div class="endgame_pscore">999</div>
+              </div>
+           
+            <div class="button-container">
+                <a href="form.html"><button class="sign-button" >Tilmeld</button></a>
+            <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+            </div>
+          </div>
+
+          <div class="endgame hide" id="tie">
+              <h1 class="endgame_result">It's a tie!</h1>
+              <p class="endgame_text"></p>
+              <div class="endgame_summary">
+                  <div class="endgame_dcards"></div>
+                  <div class="endgame_dscore">999</div>
+                  <div class="endgame_pcards"></div>
+                  <div class="endgame_pscore">999</div>
+                </div>
+      
+              <div class="button-container">
+                  <a href="form.html"><button class="sign-button" >Tilmeld</button></a>
+              <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+              </div>
+            </div>
+
+              <div class="endgame hide" id="player_wins">
+                  <h1 class="endgame_result">You win!</h1>
+                  <p class="endgame_text">You had the highest hand... </p>
+                  <div class="endgame_summary">
+                      <div class="endgame_dcards"></div>
+                      <div class="endgame_dscore">999</div>
+                      <div class="endgame_pcards"></div>
+                      <div class="endgame_pscore">999</div>
+                    </div>
+                 
+                  <div class="button-container">
+                      <a href="form.html"><button class="sign-button" >Tilmeld</button></a>
+                  <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+                  </div>
+                </div>
+
+                <div class="endgame hide" id="player_blackjack">
+                    <h1 class="endgame_result">You win!</h1>
+                    <p class="endgame_text">You have blackjack... </p>
+                    <div class="endgame_summary">
+                        <div class="endgame_dcards"></div>
+                        <div class="endgame_dscore">999</div>
+                        <div class="endgame_pcards"></div>
+                        <div class="endgame_pscore">999</div>
+                      </div>
+                  
+                    <div class="button-container">
+                        <a href="form.html"><button class="sign-button" >Tilmeld</button></a>
+                    <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+                    </div>
+                  </div>
+
+                <div class="endgame hide" id="dealer_blackjack">
+                    <h1 class="endgame_result">Dealer wins!</h1>
+                    <p class="endgame_text">Dealer has blackjack...</p>
+                    <div class="endgame_summary">
+                        <div class="endgame_dcards"></div>
+                        <div class="endgame_dscore">999</div>
+                        <div class="endgame_pcards"></div>
+                        <div class="endgame_pscore">999</div>
+                      </div>
+                    
+                    <div class="button-container">
+                        <a href="form.html"><button class="sign-button" >Tilmeld</button></a>
+                    <button class="reset"><img src="static/Backgrounds/replay.svg" alt=""></button>
+                    </div>
+                  </div>
+
+    <div id="game-background-mobil "></div>
+
+
+
+
+    <script src="./script.js"></script>
+  </body>
+</html>
