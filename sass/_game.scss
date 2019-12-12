@@ -70,6 +70,10 @@ a {
   border-radius: 10px;
 }
 
+.card:first-child {
+  margin-left: 1rem;
+}
+
 #dealerscore {
   grid-column: 2/3;
   grid-row: 1/2;
@@ -88,6 +92,10 @@ a {
 
   border-radius: 10px;
   // background-color: rgb(14, 142, 14);
+}
+
+#background {
+  border: 2px solid white;
 }
 
 #playerscore {
@@ -128,8 +136,21 @@ a {
   margin: 20px;
 }
 
+#overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 1s;
+  pointer-events: none;
+}
 .endgame {
   position: absolute;
+  z-index: 3;
   top: 11vh;
   left: 0;
   width: 100%;

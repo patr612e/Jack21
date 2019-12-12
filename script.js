@@ -533,6 +533,7 @@ function bustCheck() {
     console.log("dealer wins, you went bust!");
     hitButton.disabled = true;
     standButton.disabled = true;
+    document.querySelector("#overlay").style.opacity = "1";
 
     // turn (show) first card
     setTimeout(function() {
@@ -670,6 +671,8 @@ function determineWinner() {
       document.querySelector("#player_bust").classList.remove("hide");
     }, 1500);
   }
+  console.log("virker overlay");
+  document.querySelector("#overlay").style.opacity = "1";
   cloneToEndgameBox();
 }
 
@@ -690,6 +693,7 @@ function cloneToEndgameBox() {
 }
 
 function resetGame() {
+  document.querySelector("#overlay").style.opacity = "0";
   // reset arrays (push, pop etc.)
 
   for (let i = 0; i < dealerCards.length; i++) {

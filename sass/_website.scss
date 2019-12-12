@@ -17,8 +17,7 @@
     left: -5rem;
     background: url("static/Backgrounds/Fugle_1.svg") left center;
     background-size: cover;
-    animation: bird-animation 0.4s steps(4) infinite,
-      move-animatiion 14s infinite linear;
+    animation: bird-animation 0.4s steps(4) infinite, move-animatiion 14s infinite linear;
   }
 
   @keyframes bird-animation {
