@@ -39,7 +39,6 @@
           type="text"
           placeholder="&nbsp;"
           required
-          autofocus
           pattern="[A-Za-z]+"
           class="form-field"
         />
@@ -55,6 +54,7 @@
           type="text"
           placeholder="&nbsp;"
           required
+          autofocus
           pattern="[A-Za-z]+"
           class="form-field"
         />
@@ -267,5 +267,9 @@
         return false;
       }
     }
+
+    let urlParams = new URLSearchParams(window.location.search);
+    let id = urlParams.get("id");
+    document.querySelector("input[name='firstname']").value = id;
   </script>
 </html>

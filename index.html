@@ -59,43 +59,50 @@
       </div>
         <br />
 
-        <a href="game.html"><button disabled>Forsæt</button></a>
+        <button id="btn" disabled>Forsæt</button>
       </div>
     </div>
 
+
     <script>
-      /* Form validation */
+    /* Form validation for index.html ************************/
 
-      document
-        .querySelector(".firstname-formfield")
-        .addEventListener("keypress", checkValidity);
-      document
-        .querySelector(".firstname-formfield")
-        .addEventListener("keypress", noSpace);
+document
+  .querySelector(".firstname-formfield")
+  .addEventListener("keypress", checkValidity);
+document
+  .querySelector(".firstname-formfield")
+  .addEventListener("keypress", noSpace);
 
-      function checkValidity() {
-        if (
-          document.querySelector("input[name='firstname']").checkValidity() ===
-          true
-        ) {
-          document.querySelector("button").removeAttribute("disabled");
-          document.querySelector(".instruction-firstname").style.opacity = "0";
-          console.log("Valid");
-        } else {
-          console.log("Invalid");
-          document.querySelector("button").disabled = "true";
-        }
-      }
+function checkValidity() {
+  if (
+    document.querySelector("input[name='firstname']").checkValidity() === true
+  ) {
+    document.querySelector("button").removeAttribute("disabled");
 
-      function noSpace(event) {
-        console.log("test");
-        let e = event.which || event.keyCode;
-        if (e === 32) {
-          event.preventDefault();
-          document.querySelector(".instruction-firstname").style.opacity = "1";
-        } else {
-        }
-      }
-    </script>
+    console.log("Valid");
+  } else {
+    console.log("Invalid");
+    document.querySelector("button").disabled = "true";
+  }
+}
+
+function noSpace(event) {
+  console.log("test");
+  let e = event.which || event.keyCode;
+  if (e === 32) {
+    event.preventDefault();
+    document.querySelector(".instruction-firstname").style.opacity = "1";
+  } else {
+  }
+}
+let button = document.querySelector("#btn")
+
+button.addEventListener("click", () => {
+location.href = "game.html?id=" + document
+  .querySelector(".firstname-formfield").value;
+})
+
+</script>
   </body>
 </html>

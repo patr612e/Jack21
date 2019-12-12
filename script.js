@@ -377,7 +377,8 @@ function addDealerCardToDOM(card) {
   let dk = document.querySelector("#deck").getBoundingClientRect();
 
   //style transform add
-  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y -
+    ca.y}px) scaleX(-1) `;
 
   setTimeout(function() {
     //add transition
@@ -469,7 +470,8 @@ function addPlayerCardToDOM(card) {
   let dk = document.querySelector("#deck").getBoundingClientRect();
 
   //style transform add
-  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y -
+    ca.y}px) scaleX(-1) `;
 
   setTimeout(function() {
     //add transition
@@ -746,3 +748,19 @@ function resetGame() {
   standButton.disabled = true;
   standButton.classList.add("disabled_button");
 }
+
+let urlParams = new URLSearchParams(window.location.search);
+let id = urlParams.get("id");
+document.querySelector("#playerName").textContent = id;
+
+let signBtn = document.querySelectorAll(".sign-button");
+
+signBtn.forEach(btn => {
+  btn.addEventListener("click", () => {
+    location.href = "form.html?id=" + id;
+  });
+});
+
+signBtn.addEventListener("click", () => {
+  location.href = "form.html?id=" + id;
+});
