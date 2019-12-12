@@ -208,8 +208,9 @@ input:focus + label {
   #lumberjack-svg {
     width: 43vw;
     height: 47vw;
-    right: -4vw;
+    right: 0vw;
     bottom: 0vw;
+    max-width: 500px;
   }
 
   #trees-svg {

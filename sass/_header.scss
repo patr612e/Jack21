@@ -12,7 +12,7 @@ html {
   padding: 0;
 }
 #ikkeses {
-  width: 5rem;
+  width: 4rem;
 }
 #menu {
   padding: 0;
@@ -31,6 +31,10 @@ html {
   a {
     justify-self: center;
   }
+  img {
+    width: 4rem;
+    padding: 0.5rem;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
@@ -38,6 +42,7 @@ html {
     display: none;
   }
   #pc-header {
+    font-family: "Rubik", sans-serif;
     padding: 0;
     margin: 0;
     display: block;

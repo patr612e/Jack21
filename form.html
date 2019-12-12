@@ -6,48 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Form</title>
     <link rel="stylesheet" href="styles.scss" />
-    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header id="menu">
       <div id="mobil-header">
         <img src="static/Backgrounds/burger menu.svg" alt="burgermenu" />
-        <a href="index.html"><img id="logo1" src="static/Backgrounds/Logo.svg" alt="logo"/></a>
+        <a href="index.html"
+          ><img id="logo1" src="static/Backgrounds/Logo.svg" alt="logo"
+        /></a>
         <div id="ikkeses"></div>
       </div>
       <div id="pc-header">
         <ul>
-          <a href="index.html"> <img id="logo2" src="static/Backgrounds/Logo.svg" alt="logo"/></a>
-          <li>Om os</li>
-          <li>Nyheder</li>
-          <li>Ugens vindere</li>
+          <a href="index.html">
+            <img id="logo2" src="static/Backgrounds/Logo.svg" alt="logo"
+          /></a>
+          <li>About us</li>
+          <li>News</li>
+          <li>Weekly chart</li>
         </ul>
       </div>
     </header>
 
     <form name="customer-form">
       <div class="label-beholder">
-        <input name="firstname" type="text" placeholder="&nbsp;" required pattern="[A-Za-z]+" class="form-field" />
-        <label for="firstname">Navn</label>
+        <input
+          name="firstname"
+          type="text"
+          placeholder="&nbsp;"
+          required
+          pattern="[A-Za-z]+"
+          class="form-field"
+        />
+        <label for="firstname">Name</label>
 
         <small id="firstname" class="instruction-firstname">
-          Angiv venligst kun fornavn
+          write only firstname
         </small>
       </div>
       <div class="label-beholder">
-        <input name="lastname" type="text" placeholder="&nbsp;" required autofocus pattern="[A-Za-z]+" class="form-field" />
-        <label>Efternavn</label>
+        <input
+          name="lastname"
+          type="text"
+          placeholder="&nbsp;"
+          required
+          autofocus
+          pattern="[A-Za-z]+"
+          class="form-field"
+        />
+        <label>Last name</label>
 
         <small class="instruction-lastname">
-          Angiv venligst dit efternavn
+          Write only lastname
         </small>
       </div>
       <div class="label-beholder">
-        <input name="username" type="text" placeholder="&nbsp;" pattern="[A-Za-z0-9_]{1,15}" required class="form-field" />
-        <label>Brugernavn</label>
+        <input
+          name="username"
+          type="text"
+          placeholder="&nbsp;"
+          pattern="[A-Za-z0-9_]{1,15}"
+          required
+          class="form-field"
+        />
+        <label>Username</label>
 
         <small class="instruction-username">
-          Angiv venligst et ledigt brugernavn (1 til 15 tegn)
+          write available username (1 to 15 signs)
         </small>
       </div>
       <div class="label-beholder">
@@ -59,10 +88,11 @@
           pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$"
           class="form-field"
         />
-        <label>Adgangskode</label>
+        <label>Password</label>
 
         <small class="instruction-password">
-          Angiv venligst en gyldigt adgangskode (6-12 tegn, minimum et bogstav og tal. Ingen særlige tegn tilladt)
+          Password must be (6-12 signs, minimum one letter and number. no
+          special characters allowed)
         </small>
       </div>
       <div class="label-beholder">
@@ -74,26 +104,38 @@
           pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$"
           class="form-field"
         />
-        <label>Bekræft adgangskode</label>
+        <label>Confirm password</label>
 
         <small class="instruction-passwordconfirm">
-          Angiv venligst den samme adgangskode
+          Must be the same password
         </small>
       </div>
       <div class="label-beholder">
-        <input name="email" type="email" placeholder="&nbsp;" required class="form-field" />
+        <input
+          name="email"
+          type="email"
+          placeholder="&nbsp;"
+          required
+          class="form-field"
+        />
         <label>E-Mail</label>
 
         <small class="instruction-email">
-          Angiv venligst en korrekt email (skal indeholde @)
+          Write an existing mail (must contain @)
         </small>
       </div>
       <div class="label-beholder">
-        <input name="adress" type="text" placeholder="&nbsp;" required class="form-field" />
-        <label>Adresse</label>
+        <input
+          name="adress"
+          type="text"
+          placeholder="&nbsp;"
+          required
+          class="form-field"
+        />
+        <label>Adress</label>
 
         <small class="instruction-adress">
-          Angiv venligst din adresse (skal indeholde et tal)
+          Write an existing adress (must contain a number)
         </small>
       </div>
       <div class="label-beholder">
@@ -108,18 +150,24 @@
           pattern="[0-9]*"
           class="form-field"
         />
-        <label>Postnr.</label>
+        <label>Zipcode</label>
 
         <small class="instruction-zipcode">
-          Angiv venligst dit postnummer (4 cifre)
+          Write an existing zipcode (4 numbers)
         </small>
       </div>
       <div class="label-beholder">
-        <input name="city" type="text" placeholder="&nbsp;" required class="form-field" />
-        <label>By</label>
+        <input
+          name="city"
+          type="text"
+          placeholder="&nbsp;"
+          required
+          class="form-field"
+        />
+        <label>town</label>
 
         <small class="instruction-city">
-          Angiv venligst din by
+          Write your town of residence
         </small>
       </div>
       <div class="label-beholder">
@@ -133,18 +181,20 @@
           required
           class="form-field"
         />
-        <label>Telefonnr.</label>
+        <label>Mobile-number</label>
 
         <small class="instruction-number">
-          Angiv venligst et korrekt telefonnummer (8 cifrer)
+          write an existing Mobile-number (8 numbers)
         </small>
       </div>
-      <button id="submit" disabled>Godkend</button>
+      <button id="submit" disabled>Register</button>
     </form>
   </body>
 
   <script>
-    document.querySelector("input[name='firstname']").value = document.querySelector("input[name='firstname']").value;
+    document.querySelector(
+      "input[name='firstname']"
+    ).value = document.querySelector("input[name='firstname']").value;
 
     const form = document.querySelector("form[name='customer-form']");
     const formfield = document.querySelectorAll(".form-field");
@@ -156,16 +206,34 @@
     });
 
     function checkValidity() {
-      let firstNameValidity = document.querySelector("input[name='firstname']").checkValidity();
-      let lastNameValidity = document.querySelector("input[name='lastname']").checkValidity();
-      let passwordValidity = document.querySelector("input[name='password']").checkValidity();
+      let firstNameValidity = document
+        .querySelector("input[name='firstname']")
+        .checkValidity();
+      let lastNameValidity = document
+        .querySelector("input[name='lastname']")
+        .checkValidity();
+      let passwordValidity = document
+        .querySelector("input[name='password']")
+        .checkValidity();
       let passwordconfirmValidity = passwordMatch();
-      let usernameValidity = document.querySelector("input[name='username']").checkValidity();
-      let adressValidity = document.querySelector("input[name='adress']").checkValidity();
-      let zipcodeValidity = document.querySelector("input[name='zipcode']").checkValidity();
-      let cityValidity = document.querySelector("input[name='city']").checkValidity();
-      let emailValidity = document.querySelector("input[name='email']").checkValidity();
-      let phoneValidity = document.querySelector("input[name='phone']").checkValidity();
+      let usernameValidity = document
+        .querySelector("input[name='username']")
+        .checkValidity();
+      let adressValidity = document
+        .querySelector("input[name='adress']")
+        .checkValidity();
+      let zipcodeValidity = document
+        .querySelector("input[name='zipcode']")
+        .checkValidity();
+      let cityValidity = document
+        .querySelector("input[name='city']")
+        .checkValidity();
+      let emailValidity = document
+        .querySelector("input[name='email']")
+        .checkValidity();
+      let phoneValidity = document
+        .querySelector("input[name='phone']")
+        .checkValidity();
 
       if (
         firstNameValidity === true &&
@@ -189,7 +257,8 @@
 
     function passwordMatch() {
       if (
-        document.querySelector("input[name='password']").value === document.querySelector("input[name='passwordconfirm']").value
+        document.querySelector("input[name='password']").value ===
+        document.querySelector("input[name='passwordconfirm']").value
       ) {
         console.log("de matcher");
         return true;
