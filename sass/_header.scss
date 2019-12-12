@@ -28,6 +28,9 @@ html {
   grid-template-columns: auto 1fr auto;
 
   background: #506966;
+  a {
+    justify-self: center;
+  }
 }
 
 @media only screen and (min-width: 1000px) {
