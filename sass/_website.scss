@@ -52,8 +52,8 @@ body {
 @media only screen and (max-width: 700px) {
   #game-background-mobil {
     display: block;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    padding-top: 57%;
     background: url("static/Backgrounds/mobil-background.svg");
     background-repeat: no-repeat;
     width: 100vw;
