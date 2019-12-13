@@ -16,10 +16,10 @@ const infoForHit = document.querySelector("#hit-info");
 const infoForStand = document.querySelector("#stand-info");
 let test = true;
 
-const endgamePCards = document.querySelector(".endgame_pcards");
-const endgameDCards = document.querySelector(".endgame_dcards");
-const endgamePScore = document.querySelector(".endgame_pscore");
-const endgameDScore = document.querySelector(".endgame_dscore");
+const endgamePCards = document.querySelectorAll(".endgame_pcards");
+const endgameDCards = document.querySelectorAll(".endgame_dcards");
+const endgamePScore = document.querySelectorAll(".endgame_pscore");
+const endgameDScore = document.querySelectorAll(".endgame_dscore");
 
 // EVENTLISTENERS
 
@@ -680,17 +680,24 @@ function determineWinner() {
 function cloneToEndgameBox() {
   console.log("cloning");
 
-  endgameDScore.textContent = dealerScore;
-  endgamePScore.textContent = playerScore;
+  endgameDScore.forEach(score => {
+    score.textContent = dealerScore;
+  });
+  endgamePScore.forEach(score => {
+    score.textContent = playerScore;
+  });
 
   let cloneP = playerCardsPos.cloneNode(true);
   let cloneD = dealerCardsPos.cloneNode(true);
 
   console.log(cloneD);
-  endgamePCards.appendChild(cloneP);
-  endgameDCards.appendChild(cloneD);
-
-  console.log(endgameDCards);
+  console.log(cloneP);
+  endgamePCards.forEach(endgamebox => {
+    endgamebox.appendChild(cloneP);
+  });
+  endgameDCards.forEach(endgamebox => {
+    endgamebox.appendChild(cloneD);
+  });
 }
 
 function resetGame() {
@@ -758,8 +765,4 @@ signBtn.forEach(btn => {
   btn.addEventListener("click", () => {
     location.href = "form.html?id=" + id;
   });
-});
-
-signBtn.addEventListener("click", () => {
-  location.href = "form.html?id=" + id;
 });
