@@ -34,10 +34,9 @@ playButton.addEventListener("click", () => {
   if (test === true) {
     setTimeout(function() {
       infoForHit.style.visibility = "visible";
-    }, 1500);
-    setTimeout(function() {
       infoForStand.style.visibility = "visible";
     }, 1500);
+
     test = false;
   } else {
   }
