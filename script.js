@@ -35,7 +35,7 @@ playButton.addEventListener("click", () => {
     setTimeout(function() {
       infoForHit.style.visibility = "visible";
       infoForStand.style.visibility = "visible";
-    }, 1500);
+    }, 3000);
 
     test = false;
   } else {
@@ -340,7 +340,6 @@ let dealerScore;
 let visibleDealerScore;
 
 //USER INFO
-infoForDeal.style.visibility = "visible";
 
 // DEALER SIDE
 
@@ -376,8 +375,7 @@ function addDealerCardToDOM(card) {
   let dk = document.querySelector("#deck").getBoundingClientRect();
 
   //style transform add
-  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y -
-    ca.y}px) scaleX(-1) `;
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
 
   setTimeout(function() {
     //add transition
@@ -469,8 +467,7 @@ function addPlayerCardToDOM(card) {
   let dk = document.querySelector("#deck").getBoundingClientRect();
 
   //style transform add
-  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y -
-    ca.y}px) scaleX(-1) `;
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
 
   setTimeout(function() {
     //add transition
@@ -538,7 +535,10 @@ function bustCheck() {
     console.log("dealer wins, you went bust!");
     hitButton.disabled = true;
     standButton.disabled = true;
-    document.querySelector("#overlay").style.opacity = "1";
+
+    setTimeout(function() {
+      document.querySelector("#overlay").style.opacity = "1";
+    }, 2000);
 
     // turn (show) first card
     let firstCard = dealerCardsPos.firstElementChild;
@@ -691,7 +691,13 @@ function determineWinner() {
     }, 1500);
   }
   console.log("virker overlay");
-  document.querySelector("#overlay").style.opacity = "1";
+
+  setTimeout(function() {
+    document.querySelector("#overlay").style.opacity = "1";
+  }, 1500);
+
+  // document.querySelector("#overlay").style.opacity = "1";
+
   cloneToEndgameBox();
 }
 

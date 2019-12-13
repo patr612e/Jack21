@@ -7,13 +7,16 @@
 
 .box {
   height: 3rem;
-  width: 5rem;
+  width: 6rem;
   color: white;
   font-size: 0.8rem;
   text-align: center;
 
   transform-origin: center 10px;
   animation: animation 1s infinite ease-in-out;
+
+  display: flex;
+  flex-direction: column;
 }
 
 #cards-info {
@@ -41,7 +44,7 @@
 }
 
 .guides .box {
-  padding: 10px 0 0 10px;
+  padding: 10px 0 0 0px;
 }
 
 .deck_guide {
@@ -62,6 +65,12 @@
   }
 }
 
+@media screen and (max-width: 700px) {
+  .arrow {
+    transform: rotate(90deg);
+  }
+}
+
 @media screen and (min-width: 700px) {
   .guides {
     grid-column: 4/5;
@@ -75,47 +84,14 @@
   }
 
   .guides .box {
-    padding: 10px 0 0 10px;
+    padding: 15px 0 0 15px;
+    flex-direction: row;
+    text-align: left;
+
+    p {
+      padding-left: 4px;
+    }
   }
-
-  // #game-container {
-  //   display: grid;
-  //   grid-template-columns: 52% 10%;
-  //   justify-self: center;
-  //   align-self: center;
-  //   margin: 0 auto;
-  // }
-  // .box {
-  //   height: 3rem;
-  //   width: 5rem;
-
-  //   color: white;
-  //   font-size: 0.8rem;
-  //   justify-self: left;
-  //   grid-column: 4/5;
-  //   grid-row: 2/3;
-  //   margin-left: 0.1rem;
-  //   padding: 0 0.4rem;
-  //   animation: animation 1s infinite ease-in-out;
-  // }
-
-  // #cards-info {
-  //   grid-column: 4/5;
-  //   grid-row: 1/2;
-  //   padding-top: 0.6rem;
-  //   margin-top: 4rem;
-  // }
-  // #stand-info {
-  //   margin-top: 8.6rem;
-  // }
-
-  // #hit-info {
-  //   margin-top: 5.4rem;
-  // }
-  // #deal-info {
-  //   height: 3.5rem;
-  //   padding-top: 1.2rem;
-  // }
 
   #background {
     grid-column: 1/4;
