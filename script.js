@@ -528,6 +528,10 @@ function calcPlayerScore() {
 
   bustCheck();
 }
+const endgamePCardsb = document.querySelector("#endgame_pcards");
+const endgameDCardsb = document.querySelector("#endgame_dcards");
+const endgamePScoreb = document.querySelector("#endgame_pscore");
+const endgameDScoreb = document.querySelector("#endgame_dscore");
 
 function bustCheck() {
   if (playerScore > 21) {
@@ -537,15 +541,29 @@ function bustCheck() {
     document.querySelector("#overlay").style.opacity = "1";
 
     // turn (show) first card
+    let firstCard = dealerCardsPos.firstElementChild;
     setTimeout(function() {
-      let firstCard = dealerCardsPos.firstElementChild;
       firstCard.classList.remove("card_backside");
       dealerScorePos.textContent = dealerScore;
     }, 1000);
 
     setTimeout(function() {
       document.querySelector("#player_bust").classList.remove("hide");
+      bustCheckClone();
     }, 2000);
+  }
+
+  function bustCheckClone() {
+    let firstCard = dealerCardsPos.firstElementChild;
+    firstCard.classList.remove("card_backside");
+    endgameDScoreb.textContent = dealerScore;
+    endgamePScoreb.textContent = playerScore;
+
+    let clonePb = playerCardsPos.cloneNode(true);
+    let cloneDb = dealerCardsPos.cloneNode(true);
+
+    endgamePCardsb.appendChild(clonePb);
+    endgameDCardsb.appendChild(cloneDb);
   }
 
   //You went bust window
@@ -687,15 +705,12 @@ function cloneToEndgameBox() {
     score.textContent = playerScore;
   });
 
-  let cloneP = playerCardsPos.cloneNode(true);
-  let cloneD = dealerCardsPos.cloneNode(true);
-
-  console.log(cloneD);
-  console.log(cloneP);
   endgamePCards.forEach(endgamebox => {
+    let cloneP = playerCardsPos.cloneNode(true);
     endgamebox.appendChild(cloneP);
   });
   endgameDCards.forEach(endgamebox => {
+    let cloneD = dealerCardsPos.cloneNode(true);
     endgamebox.appendChild(cloneD);
   });
 }
@@ -736,8 +751,16 @@ function resetGame() {
   endgameDScore.textContent = 0;
   endgamePScore.textContent = 0;
 
-  endgameDCards.innerHTML = "";
-  endgamePCards.innerHTML = "";
+  endgameDCardsb.innerHTML = "";
+  endgamePCardsb.innerHTML = "";
+
+  endgameDCards.forEach(window => {
+    window.innerHTML = "";
+  });
+
+  endgamePCards.forEach(window => {
+    window.innerHTML = "";
+  });
 
   document.querySelectorAll(".endgame").forEach(window => {
     window.classList.add("hide");

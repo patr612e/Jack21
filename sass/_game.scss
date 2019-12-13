@@ -209,6 +209,20 @@ a {
   grid-row: 2/3;
   justify-self: center;
 }
+#endgame_dscore {
+  justify-self: center;
+  padding: 20px;
+}
+
+#endgame_pscore {
+  justify-self: center;
+  padding: 20px;
+}
+
+#endgame_text {
+  grid-row: 2/3;
+  justify-self: center;
+}
 
 // #dealer_bust {
 // }
