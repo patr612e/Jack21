@@ -6,25 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Form</title>
     <link rel="stylesheet" href="styles.scss" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet" />
   </head>
   <body>
     <header id="menu">
       <div id="mobil-header">
         <img src="static/Backgrounds/burger menu.svg" alt="burgermenu" />
-        <a href="index.html"
-          ><img id="logo1" src="static/Backgrounds/Logo.svg" alt="logo"
-        /></a>
+        <a href="index.html"><img id="logo1" src="static/Backgrounds/Logo.svg" alt="logo"/></a>
         <div id="ikkeses"></div>
       </div>
       <div id="pc-header">
         <ul>
-          <a href="index.html">
-            <img id="logo2" src="static/Backgrounds/Logo.svg" alt="logo"
-          /></a>
+          <a href="index.html"> <img id="logo2" src="static/Backgrounds/Logo.svg" alt="logo"/></a>
           <li>About us</li>
           <li>News</li>
           <li>Weekly chart</li>
@@ -32,7 +25,71 @@
       </div>
     </header>
 
-    <form name="customer-form">
+    <form id="signup">
+      <div class="firstrow">
+        <div class="inputcontainer">
+          <input name="firstname" type="text" placeholder="&nbsp;" required pattern="[A-Za-z]+" />
+          <span class="help-text"></span>
+          <label for="firstname">First name</label>
+        </div>
+        <div class="inputcontainer">
+          <input name="lastname" type="text" placeholder="&nbsp;" required autofocus pattern="[A-Za-z]+" />
+          <span class="help-text"></span>
+          <label>Last name</label>
+        </div>
+        <div class="inputcontainer">
+          <input name="username" type="text" placeholder="&nbsp;" pattern="[A-Za-z0-9_]{1,15}" required />
+          <span class="help-text"></span>
+          <label>Username</label>
+        </div>
+        <div class="inputcontainer">
+          <input name="password" type="password" placeholder="&nbsp;" required pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$" />
+          <span class="help-text"></span>
+          <label>Password</label>
+        </div>
+        <div class="inputcontainer">
+          <input
+            name="passwordconfirm"
+            type="password"
+            placeholder="&nbsp;"
+            required
+            pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$"
+          />
+          <span class="help-text"></span>
+          <label>Confirm password</label>
+        </div>
+      </div>
+      <div class="secondrow">
+        <div class="inputcontainer">
+          <input name="email" type="email" placeholder="&nbsp;" required />
+          <span class="help-text"></span>
+          <label>E-mail</label>
+        </div>
+        <div class="inputcontainer">
+          <input name="adress" type="text" placeholder="&nbsp;" required class="form-field" />
+          <span class="help-text"></span>
+          <label>Address</label>
+        </div>
+        <div class="inputcontainer">
+          <input name="zipcode" type="text" placeholder="&nbsp;" required maxlength="4" minlength="4" size="4" pattern="[0-9]*" />
+          <span class="help-text"></span>
+          <label>Zip Code</label>
+        </div>
+        <div class="inputcontainer">
+          <input name="city" type="text" placeholder="&nbsp;" required />
+          <span class="help-text"></span>
+          <label>City</label>
+        </div>
+        <div class="inputcontainer">
+          <input name="phone" type="tel" pattern="[0-9]*" minlength="8" maxlength="8" placeholder="&nbsp;" required />
+          <span class="help-text"></span>
+          <label>Phone</label>
+        </div>
+      </div>
+      <button id="submit" disabled>Register</button>
+    </form>
+
+    <!-- <form name="customer-form">
       <div class="label-beholder">
         <input
           name="firstname"
@@ -188,13 +245,11 @@
         </small>
       </div>
       <button id="submit" disabled>Register</button>
-    </form>
+    </form> -->
   </body>
 
   <script>
-    document.querySelector(
-      "input[name='firstname']"
-    ).value = document.querySelector("input[name='firstname']").value;
+    document.querySelector("input[name='firstname']").value = document.querySelector("input[name='firstname']").value;
 
     const form = document.querySelector("form[name='customer-form']");
     const formfield = document.querySelectorAll(".form-field");
@@ -206,34 +261,16 @@
     });
 
     function checkValidity() {
-      let firstNameValidity = document
-        .querySelector("input[name='firstname']")
-        .checkValidity();
-      let lastNameValidity = document
-        .querySelector("input[name='lastname']")
-        .checkValidity();
-      let passwordValidity = document
-        .querySelector("input[name='password']")
-        .checkValidity();
+      let firstNameValidity = document.querySelector("input[name='firstname']").checkValidity();
+      let lastNameValidity = document.querySelector("input[name='lastname']").checkValidity();
+      let passwordValidity = document.querySelector("input[name='password']").checkValidity();
       let passwordconfirmValidity = passwordMatch();
-      let usernameValidity = document
-        .querySelector("input[name='username']")
-        .checkValidity();
-      let adressValidity = document
-        .querySelector("input[name='adress']")
-        .checkValidity();
-      let zipcodeValidity = document
-        .querySelector("input[name='zipcode']")
-        .checkValidity();
-      let cityValidity = document
-        .querySelector("input[name='city']")
-        .checkValidity();
-      let emailValidity = document
-        .querySelector("input[name='email']")
-        .checkValidity();
-      let phoneValidity = document
-        .querySelector("input[name='phone']")
-        .checkValidity();
+      let usernameValidity = document.querySelector("input[name='username']").checkValidity();
+      let adressValidity = document.querySelector("input[name='adress']").checkValidity();
+      let zipcodeValidity = document.querySelector("input[name='zipcode']").checkValidity();
+      let cityValidity = document.querySelector("input[name='city']").checkValidity();
+      let emailValidity = document.querySelector("input[name='email']").checkValidity();
+      let phoneValidity = document.querySelector("input[name='phone']").checkValidity();
 
       if (
         firstNameValidity === true &&
@@ -257,8 +294,7 @@
 
     function passwordMatch() {
       if (
-        document.querySelector("input[name='password']").value ===
-        document.querySelector("input[name='passwordconfirm']").value
+        document.querySelector("input[name='password']").value === document.querySelector("input[name='passwordconfirm']").value
       ) {
         console.log("de matcher");
         return true;

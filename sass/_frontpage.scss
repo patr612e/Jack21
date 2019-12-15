@@ -3,24 +3,24 @@
 #label-container {
   position: relative;
 }
-label {
+#label-container label {
   position: absolute;
   top: 2rem;
   left: 44vw;
   right: 50vw;
 }
 @media only screen and (max-width: 400px) {
-  label {
+  #label-container label {
     left: 37vw;
   }
 }
 
-input:not(:placeholder-shown) + label {
+input:not(:placeholder-shown) + #label-container label {
   transform: translatey(-2rem);
   opacity: 1;
   color: $ivory;
 }
-input:focus + label {
+input:focus + #label-container label {
   transform: translatey(-2rem);
   opacity: 1;
   color: $ivory;
@@ -200,7 +200,7 @@ input:focus + label {
       font-size: 1em;
     }
   }
-  label {
+  #label-container label {
     position: absolute;
     top: 1rem;
     left: 21rem;
