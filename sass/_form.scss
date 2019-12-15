@@ -2,8 +2,9 @@
   margin: 20px;
   padding: 40px;
   max-width: 700px;
-  background-color: rgb(196, 163, 133);
+  background-color: #5c4d4e;
   border: 1px solid black;
+  border-radius: 6px;
 
   input {
     padding: 10px 0;
@@ -11,8 +12,9 @@
     width: 100%;
     outline: none;
     border: none;
-    border-bottom: 2px solid black;
-    background-color: rgb(196, 163, 133);
+    border-bottom: 2px solid white;
+    background-color: #5c4d4e;
+    color: white;
   }
 
   button {
@@ -56,17 +58,17 @@
     top: 10px;
     left: 0;
     pointer-events: none;
-    color: rgb(0, 0, 0);
+    color: white;
     transition: 0.3s;
   }
 
   .help-text {
     font-size: 10px;
-    color: #a84747;
+    color: #e43030;
   }
 }
 
-input:valid + .help-text,
+// input:valid + .help-text,
 input:focus + .help-text {
   margin-bottom: 30px;
 }
