@@ -1,183 +1,183 @@
-@media screen and (max-width: 500px) {
-  form[name="customer-form"] {
-    label {
-      color: black;
-      pointer-events: none;
-      width: 11rem;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    margin: 0;
-    padding: 0;
-    padding-top: 4rem;
-    padding-bottom: 2rem;
-  }
+.inputcontainer .invalid_state {
+  top: -12px;
+  left: 0;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-form[name="customer-form"] {
-  font-family: "Rubik", sans-serif;
-  background-color: $matterhorn;
-  display: grid;
+#signup {
+  margin: 20px;
+  padding: 40px;
+  max-width: 700px;
+  background-color: #5c4d4e;
+  border: 1px solid black;
+  border-radius: 6px;
 
-  label {
-    font-family: "Rubik", sans-serif;
-    font-weight: 700;
-    color: black;
-    pointer-events: none;
-    width: 12rem;
-    position: absolute;
-    top: 0;
-    left: 8.2rem;
+  input {
+    padding: 10px 0;
+    margin-bottom: 30px;
+    width: 100%;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid white;
+    background-color: #5c4d4e;
+    color: white;
   }
 
   button {
-    width: 6em;
-    color: $ivory;
-    border-radius: 10px;
-    margin: auto;
-    display: block;
-    margin: 0em auto;
-    background-color: green;
+    cursor: pointer;
   }
 
-  button:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
+  input[type="submit"] {
+    border-bottom: none;
+    cursor: pointer;
+    margin-bottom: 0;
   }
 
-  input {
-    border-radius: 6px;
-  }
-
-  input:invalid:not(:placeholder-shown):not(:focus) {
-    border-color: red;
-    background-position-x: calc(100% - 16px);
-    background-position-y: 50%;
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    color: red;
-    //background-image: $error;
-    animation: shake 0.13s 2 backwards;
-  }
-
-  input:valid:not(:focus) {
-    border-color: green;
-    background-position-x: calc(100% - 16px);
-    background-position-y: 50%;
-    background-size: 20px 20px;
-    background-repeat: no-repeat;
-    color: green;
-    //background-image: $check;
-  }
-
-  @keyframes shake {
-    50% {
-      transform: translateX(15px);
-    }
-  }
-
-  .instruction-firstname,
-  .instruction-lastname,
-  .instruction-username,
-  .instruction-password,
-  .instruction-passwordconfirm,
-  .instruction-adress,
-  .instruction-zipcode,
-  .instruction-city,
-  .instruction-email,
-  .instruction-number {
-    transition: 0.3s;
-    opacity: 0;
-    color: red;
-    padding: 6px;
-    justify-self: center;
-    padding-bottom: 2rem;
-    grid-row: 2/3;
-  }
-
-  input[name="firstname"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-firstname {
-    opacity: 1;
-  }
-
-  input[name="lastname"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-lastname {
-    opacity: 1;
-  }
-
-  input[name="username"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-username {
-    opacity: 1;
-  }
-
-  input[name="password"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-password {
-    opacity: 1;
-  }
-
-  input[name="passwordconfirm"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-passwordconfirm {
-    opacity: 1;
-  }
-
-  input[name="adress"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-adress {
-    opacity: 1;
-  }
-
-  input[name="zipcode"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-zipcode {
-    opacity: 1;
-  }
-
-  input[name="city"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-city {
-    opacity: 1;
-  }
-
-  input[name="email"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-email {
-    opacity: 1;
-  }
-  input[name="phone"]:invalid:not(:placeholder-shown):not(:focus)
-    ~ .instruction-number {
-    opacity: 1;
+  input:focus ~ label,
+  input:valid ~ label {
+    top: -12px;
+    left: 0;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
   }
 }
 
-.form-field {
-  width: 20rem;
+// label
 
-  justify-self: center;
-}
-form {
-  justify-self: center;
-  padding-top: 2rem;
-  width: 100vw;
-  align-content: center;
-  justify-content: center;
-  padding: 4rem;
-  margin-left: auto;
-  margin-right: auto;
-}
+.inputcontainer {
+  display: grid;
+  grid-template-rows: auto auto auto;
 
-.label-beholder {
+  display: flex;
+  flex-direction: column;
   position: relative;
 
-  display: grid;
+  label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    pointer-events: none;
+    color: white;
+    transition: 0.3s;
+  }
+
+  .help-text {
+    font-size: 10px;
+    color: #e43030;
+    margin: -15px 0 25px 0;
+  }
 }
 
-@media only screen and (min-width: 1100px) {
-  form {
-    justify-self: center;
-    padding-top: 2rem;
-    width: 70vw;
-    align-content: center;
-    justify-content: center;
-    padding: 4rem;
-    margin-left: auto;
-    margin-right: auto;
+// input:valid + .help-text,
+input:focus + .help-text {
+  margin-bottom: 30px;
+}
+
+// input[name="firstname"]:focus:invalid + .help-text::before {
+//   content: "You must enter only your first name";
+// }
+
+// input[name="lastname"]:focus:invalid + .help-text::before {
+//   content: "You must enter only your last name";
+// }
+
+// input[name="username"]:focus:invalid + .help-text::before {
+//   content: "You must submit an available username (1-15 characters)";
+// }
+
+// input[name="password"]:focus:invalid + .help-text::before {
+//   content: "Password must be 6-12 characters with at least one letter and one number - no special characters allowed";
+// }
+
+// input[name="passwordconfirm"]:focus:invalid + .help-text::before {
+//   content: "Passwords must match";
+// }
+
+// input[name="email"]:focus:invalid + .help-text::before {
+//   content: "You must enter a valid email (x@x.x)";
+// }
+
+// input[name="adress"]:focus:invalid + .help-text::before {
+//   content: "Please write an existing address (street name + house number)";
+// }
+
+// input[name="zipcode"]:focus:invalid + .help-text::before {
+//   content: "You must enter a zipcode (4 numbers)";
+// }
+
+// input[name="city"]:focus:invalid + .help-text::before {
+//   content: "You must enter a city (no numbers allowed)";
+// }
+
+// input[name="phone"]:focus:invalid + .help-text::before {
+//   content: "You must enter a phone number (8 numbers)";
+// }
+
+input[name="firstname"] + .help-text::before {
+  content: "You must enter only your first name";
+}
+
+input[name="lastname"] + .help-text::before {
+  content: "You must enter only your last name";
+}
+
+input[name="username"] + .help-text::before {
+  content: "You must submit an available username (1-15 characters)";
+}
+
+input[name="password"] + .help-text::before {
+  content: "Password must be 6-12 characters with at least one letter and one number - no special characters allowed";
+}
+
+input[name="passwordconfirm"] + .help-text::before {
+  content: "Passwords must match";
+}
+
+input[name="email"] + .help-text::before {
+  content: "You must enter a valid email (x@x.x)";
+}
+
+input[name="adress"] + .help-text::before {
+  content: "Please write an existing address (street name + house number)";
+}
+
+input[name="zipcode"] + .help-text::before {
+  content: "You must enter a zipcode (4 numbers)";
+}
+
+input[name="city"] + .help-text::before {
+  content: "You must enter a city (no numbers allowed)";
+}
+
+input[name="phone"] + .help-text::before {
+  content: "You must enter a phone number (8 numbers)";
+}
+
+.hide_help {
+  display: none;
+}
+
+@media screen and (min-width: 700px) {
+  #signup {
+    margin: 10px auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+
+    button {
+      width: 200px;
+      grid-row: 2/3;
+      grid-column: 1/3;
+      justify-self: center;
+      cursor: pointer;
+    }
+
+    > div {
+      margin: 20px;
+    }
   }
 }
