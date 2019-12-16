@@ -152,8 +152,9 @@ input:focus + #label-container label {
     border-radius: 10px;
     margin: auto;
     display: block;
-    margin: 0em auto;
+    margin: 10px auto 10px auto;
     background-color: green;
+    cursor: pointer;
   }
 
   button:disabled {

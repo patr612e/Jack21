@@ -88,171 +88,13 @@
       </div>
       <button id="submit" disabled>Register</button>
     </form>
-
-    <!-- <form name="customer-form">
-      <div class="label-beholder">
-        <input
-          name="firstname"
-          type="text"
-          placeholder="&nbsp;"
-          required
-          pattern="[A-Za-z]+"
-          class="form-field"
-        />
-        <label for="firstname">Name</label>
-
-        <small id="firstname" class="instruction-firstname">
-          write only firstname
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="lastname"
-          type="text"
-          placeholder="&nbsp;"
-          required
-          autofocus
-          pattern="[A-Za-z]+"
-          class="form-field"
-        />
-        <label>Last name</label>
-
-        <small class="instruction-lastname">
-          Write only lastname
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="username"
-          type="text"
-          placeholder="&nbsp;"
-          pattern="[A-Za-z0-9_]{1,15}"
-          required
-          class="form-field"
-        />
-        <label>Username</label>
-
-        <small class="instruction-username">
-          write available username (1 to 15 signs)
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="password"
-          type="password"
-          placeholder="&nbsp;"
-          required
-          pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$"
-          class="form-field"
-        />
-        <label>Password</label>
-
-        <small class="instruction-password">
-          Password must be (6-12 signs, minimum one letter and number. no
-          special characters allowed)
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="passwordconfirm"
-          type="password"
-          placeholder="&nbsp;"
-          required
-          pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$"
-          class="form-field"
-        />
-        <label>Confirm password</label>
-
-        <small class="instruction-passwordconfirm">
-          Must be the same password
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="email"
-          type="email"
-          placeholder="&nbsp;"
-          required
-          class="form-field"
-        />
-        <label>E-Mail</label>
-
-        <small class="instruction-email">
-          Write an existing mail (must contain @)
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="adress"
-          type="text"
-          placeholder="&nbsp;"
-          required
-          class="form-field"
-        />
-        <label>Adress</label>
-
-        <small class="instruction-adress">
-          Write an existing adress (must contain a number)
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="zipcode"
-          type="text"
-          placeholder="&nbsp;"
-          required
-          maxlength="4"
-          minlength="4"
-          size="4"
-          pattern="[0-9]*"
-          class="form-field"
-        />
-        <label>Zipcode</label>
-
-        <small class="instruction-zipcode">
-          Write an existing zipcode (4 numbers)
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="city"
-          type="text"
-          placeholder="&nbsp;"
-          required
-          class="form-field"
-        />
-        <label>town</label>
-
-        <small class="instruction-city">
-          Write your town of residence
-        </small>
-      </div>
-      <div class="label-beholder">
-        <input
-          name="phone"
-          type="tel"
-          pattern="[0-9]*"
-          minlength="8"
-          maxlength="8"
-          placeholder="&nbsp;"
-          required
-          class="form-field"
-        />
-        <label>Mobile-number</label>
-
-        <small class="instruction-number">
-          write an existing Mobile-number (8 numbers)
-        </small>
-      </div>
-      <button id="submit" disabled>Register</button>
-    </form> -->
   </body>
 
   <script>
     document.querySelector("input[name='firstname']").value = document.querySelector("input[name='firstname']").value;
 
-    const form = document.querySelector("form[name='customer-form']");
-    const formfield = document.querySelectorAll(".form-field");
+    const form = document.querySelector("#signup");
+    const formfield = document.querySelectorAll("input");
 
     form.setAttribute("novalidate", true);
 
@@ -285,6 +127,9 @@
         phoneValidity === true
       ) {
         document.querySelector("#submit").removeAttribute("disabled");
+        document.querySelector("#submit").style.transition = "1s";
+        document.querySelector("#submit").style.borderRadius = "7px";
+        document.querySelector("#submit").style.backgroundColor = "#fff";
         console.log("Valid");
       } else {
         console.log("Invalid");
