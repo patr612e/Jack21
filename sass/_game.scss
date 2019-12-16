@@ -142,7 +142,7 @@ a {
 #overlay {
   background-color: rgba(0, 0, 0, 0.9);
   width: 100vw;
-  height: 133%;
+  height: 100%;
   z-index: 2;
   position: absolute;
   left: 0;
@@ -197,11 +197,15 @@ a {
   .endgame_dscore {
     justify-self: center;
     padding: 20px;
+    font-size: 2rem;
+    font-weight: 700;
   }
 
   .endgame_pscore {
     justify-self: center;
     padding: 20px;
+    font-size: 2rem;
+    font-weight: 700;
   }
 }
 
@@ -212,11 +216,15 @@ a {
 #endgame_dscore {
   justify-self: center;
   padding: 20px;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 #endgame_pscore {
   justify-self: center;
   padding: 20px;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 #endgame_text {
@@ -342,4 +350,7 @@ a {
   margin-top: 0;
   transform: translateY(-2rem);
   text-align: center;
+}
+body {
+  overflow-x: hidden;
 }

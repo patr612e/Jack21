@@ -375,7 +375,8 @@ function addDealerCardToDOM(card) {
   let dk = document.querySelector("#deck").getBoundingClientRect();
 
   //style transform add
-  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y -
+    ca.y}px) scaleX(-1) `;
 
   setTimeout(function() {
     //add transition
@@ -467,7 +468,8 @@ function addPlayerCardToDOM(card) {
   let dk = document.querySelector("#deck").getBoundingClientRect();
 
   //style transform add
-  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y -
+    ca.y}px) scaleX(-1) `;
 
   setTimeout(function() {
     //add transition
@@ -538,6 +540,7 @@ function bustCheck() {
 
     setTimeout(function() {
       document.querySelector("#overlay").style.opacity = "1";
+      document.querySelector("body").style.overflowY = "hidden";
     }, 2000);
 
     // turn (show) first card
@@ -694,6 +697,7 @@ function determineWinner() {
 
   setTimeout(function() {
     document.querySelector("#overlay").style.opacity = "1";
+    document.querySelector("body").style.overflowY = "hidden";
   }, 1500);
 
   // document.querySelector("#overlay").style.opacity = "1";
@@ -723,6 +727,7 @@ function cloneToEndgameBox() {
 
 function resetGame() {
   document.querySelector("#overlay").style.opacity = "0";
+  document.querySelector("body").style.overflowY = "visible";
   // reset arrays (push, pop etc.)
 
   for (let i = 0; i < dealerCards.length; i++) {
