@@ -1,3 +1,11 @@
+.inputcontainer .invalid_state {
+  top: -12px;
+  left: 0;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+}
+
 #signup {
   margin: 20px;
   padding: 40px;
@@ -28,7 +36,6 @@
   }
 
   input:focus ~ label,
-  // input:invalid ~ label,
   input:valid ~ label {
     top: -12px;
     left: 0;
@@ -36,15 +43,9 @@
     font-size: 12px;
     font-weight: bold;
   }
-
-  input:focus {
-    margin-bottom: 10px;
-  }
-
-  input:valid {
-    border-bottom: 2px solid black;
-  }
 }
+
+// label
 
 .inputcontainer {
   display: grid;
@@ -66,6 +67,7 @@
   .help-text {
     font-size: 10px;
     color: #e43030;
+    margin: -15px 0 25px 0;
   }
 }
 
@@ -74,59 +76,88 @@ input:focus + .help-text {
   margin-bottom: 30px;
 }
 
-input[name="firstname"]:focus:invalid + .help-text::before {
+// input[name="firstname"]:focus:invalid + .help-text::before {
+//   content: "You must enter only your first name";
+// }
+
+// input[name="lastname"]:focus:invalid + .help-text::before {
+//   content: "You must enter only your last name";
+// }
+
+// input[name="username"]:focus:invalid + .help-text::before {
+//   content: "You must submit an available username (1-15 characters)";
+// }
+
+// input[name="password"]:focus:invalid + .help-text::before {
+//   content: "Password must be 6-12 characters with at least one letter and one number - no special characters allowed";
+// }
+
+// input[name="passwordconfirm"]:focus:invalid + .help-text::before {
+//   content: "Passwords must match";
+// }
+
+// input[name="email"]:focus:invalid + .help-text::before {
+//   content: "You must enter a valid email (x@x.x)";
+// }
+
+// input[name="adress"]:focus:invalid + .help-text::before {
+//   content: "Please write an existing address (street name + house number)";
+// }
+
+// input[name="zipcode"]:focus:invalid + .help-text::before {
+//   content: "You must enter a zipcode (4 numbers)";
+// }
+
+// input[name="city"]:focus:invalid + .help-text::before {
+//   content: "You must enter a city (no numbers allowed)";
+// }
+
+// input[name="phone"]:focus:invalid + .help-text::before {
+//   content: "You must enter a phone number (8 numbers)";
+// }
+
+input[name="firstname"] + .help-text::before {
   content: "You must enter only your first name";
 }
 
-input[name="lastname"]:focus:invalid + .help-text::before {
+input[name="lastname"] + .help-text::before {
   content: "You must enter only your last name";
 }
 
-input[name="username"]:focus:invalid + .help-text::before {
+input[name="username"] + .help-text::before {
   content: "You must submit an available username (1-15 characters)";
 }
 
-input[name="password"]:focus:invalid + .help-text::before {
+input[name="password"] + .help-text::before {
   content: "Password must be 6-12 characters with at least one letter and one number - no special characters allowed";
 }
 
-input[name="passwordconfirm"]:focus:invalid + .help-text::before {
+input[name="passwordconfirm"] + .help-text::before {
   content: "Passwords must match";
 }
 
-input[name="email"]:focus:invalid + .help-text::before {
+input[name="email"] + .help-text::before {
   content: "You must enter a valid email (x@x.x)";
 }
 
-input[name="adress"]:focus:invalid + .help-text::before {
+input[name="adress"] + .help-text::before {
   content: "Please write an existing address (street name + house number)";
 }
 
-input[name="zipcode"]:focus:invalid + .help-text::before {
+input[name="zipcode"] + .help-text::before {
   content: "You must enter a zipcode (4 numbers)";
 }
 
-input[name="city"]:focus:invalid + .help-text::before {
+input[name="city"] + .help-text::before {
   content: "You must enter a city (no numbers allowed)";
 }
 
-input[name="phone"]:focus:invalid + .help-text::before {
+input[name="phone"] + .help-text::before {
   content: "You must enter a phone number (8 numbers)";
 }
 
-.instruction-firstname,
-.instruction-lastname,
-.instruction-username,
-.instruction-password,
-.instruction-passwordconfirm,
-.instruction-adress,
-.instruction-zipcode,
-.instruction-city,
-.instruction-email,
-.instruction-number {
-  transition: 0.3s;
-  opacity: 1;
-  color: rgb(168, 71, 71);
+.hide_help {
+  display: none;
 }
 
 @media screen and (min-width: 700px) {

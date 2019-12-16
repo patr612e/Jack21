@@ -29,23 +29,23 @@
       <div class="firstrow">
         <div class="inputcontainer">
           <input name="firstname" type="text" placeholder="&nbsp;" required pattern="[A-Za-z]+" />
-          <span class="help-text"></span>
-          <label for="firstname">First name</label>
+          <span class="help1 help-text hide_help"></span>
+          <label id="L1" for="firstname">First name</label>
         </div>
         <div class="inputcontainer">
           <input name="lastname" type="text" placeholder="&nbsp;" required autofocus pattern="[A-Za-z]+" />
-          <span class="help-text"></span>
-          <label>Last name</label>
+          <span class="help2 help-text hide_help"></span>
+          <label id="L2">Last name</label>
         </div>
         <div class="inputcontainer">
           <input name="username" type="text" placeholder="&nbsp;" pattern="[A-Za-z0-9_]{1,15}" required />
-          <span class="help-text"></span>
-          <label>Username</label>
+          <span class="help3 help-text hide_help"></span>
+          <label id="L3">Username</label>
         </div>
         <div class="inputcontainer">
           <input name="password" type="password" placeholder="&nbsp;" required pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$" />
-          <span class="help-text"></span>
-          <label>Password</label>
+          <span class="help4 help-text hide_help"></span>
+          <label id="L4">Password</label>
         </div>
         <div class="inputcontainer">
           <input
@@ -55,35 +55,35 @@
             required
             pattern="^(?=.*[a-zA-Z])(?=\w*[0-9])\w{6,12}$"
           />
-          <span class="help-text"></span>
-          <label>Confirm password</label>
+          <span class="help5 help-text hide_help"></span>
+          <label id="L5">Confirm password</label>
         </div>
       </div>
       <div class="secondrow">
         <div class="inputcontainer">
           <input name="email" type="email" placeholder="&nbsp;" required />
-          <span class="help-text"></span>
-          <label>E-mail</label>
+          <span class="help6 help-text hide_help"></span>
+          <label id="L6">E-mail</label>
         </div>
         <div class="inputcontainer">
           <input name="adress" type="text" placeholder="&nbsp;" required class="form-field" />
-          <span class="help-text"></span>
-          <label>Address</label>
+          <span class="help7 help-text hide_help"></span>
+          <label id="L7">Address</label>
         </div>
         <div class="inputcontainer">
           <input name="zipcode" type="text" placeholder="&nbsp;" required maxlength="4" minlength="4" size="4" pattern="[0-9]*" />
-          <span class="help-text"></span>
-          <label>Zip Code</label>
+          <span class="help8 help-text hide_help"></span>
+          <label id="L8">Zip Code</label>
         </div>
         <div class="inputcontainer">
           <input name="city" type="text" placeholder="&nbsp;" required />
-          <span class="help-text"></span>
-          <label>City</label>
+          <span class="help9 help-text hide_help"></span>
+          <label id="L9">City</label>
         </div>
         <div class="inputcontainer">
           <input name="phone" type="tel" pattern="[0-9]*" minlength="8" maxlength="8" placeholder="&nbsp;" required />
-          <span class="help-text"></span>
-          <label>Phone</label>
+          <span class="help10 help-text hide_help"></span>
+          <label id="L10">Phone</label>
         </div>
       </div>
       <button id="submit" disabled>Register</button>
@@ -107,6 +107,7 @@
       let lastNameValidity = document.querySelector("input[name='lastname']").checkValidity();
       let passwordValidity = document.querySelector("input[name='password']").checkValidity();
       let passwordconfirmValidity = passwordMatch();
+      let passwordconfirmValid = document.querySelector("input[name='passwordconfirm']").checkValidity();
       let usernameValidity = document.querySelector("input[name='username']").checkValidity();
       let adressValidity = document.querySelector("input[name='adress']").checkValidity();
       let zipcodeValidity = document.querySelector("input[name='zipcode']").checkValidity();
@@ -136,6 +137,116 @@
         document.querySelector("#submit").disabled = "true";
       }
     }
+
+    document.querySelector("input[name='firstname']").addEventListener("blur", () => {
+      let firstNameValidity = document.querySelector("input[name='firstname']").checkValidity();
+      if (firstNameValidity === false) {
+        document.querySelector(".help1").classList.remove("hide_help");
+        document.querySelector("#L1").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help1").classList.add("hide_help");
+        document.querySelector("#L1").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='lastname']").addEventListener("blur", () => {
+      let lastNameValidity = document.querySelector("input[name='lastname']").checkValidity();
+      if (lastNameValidity === false) {
+        document.querySelector(".help2").classList.remove("hide_help");
+        document.querySelector("#L2").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help2").classList.add("hide_help");
+        document.querySelector("#L2").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='username']").addEventListener("blur", () => {
+      let usernameValidity = document.querySelector("input[name='username']").checkValidity();
+      if (usernameValidity === false) {
+        document.querySelector(".help3").classList.remove("hide_help");
+        document.querySelector("#L3").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help3").classList.add("hide_help");
+        document.querySelector("#L3").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='password']").addEventListener("blur", () => {
+      let passwordValidity = document.querySelector("input[name='password']").checkValidity();
+      if (passwordValidity === false) {
+        document.querySelector(".help4").classList.remove("hide_help");
+        document.querySelector("#L4").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help4").classList.add("hide_help");
+        document.querySelector("#L4").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='passwordconfirm']").addEventListener("blur", () => {
+      let passwordValid = document.querySelector("input[name='passwordconfirm']").checkValidity();
+      if (passwordValid === false) {
+        document.querySelector(".help5").classList.remove("hide_help");
+        document.querySelector("#L5").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help5").classList.add("hide_help");
+        document.querySelector("#L5").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='email']").addEventListener("blur", () => {
+      let emailValidity = document.querySelector("input[name='email']").checkValidity();
+      if (emailValidity === false) {
+        document.querySelector(".help6").classList.remove("hide_help");
+        document.querySelector("#L6").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help6").classList.add("hide_help");
+        document.querySelector("#L6").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='adress']").addEventListener("blur", () => {
+      let adressValidity = document.querySelector("input[name='adress']").checkValidity();
+      if (adressValidity === false) {
+        document.querySelector(".help7").classList.remove("hide_help");
+        document.querySelector("#L7").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help7").classList.add("hide_help");
+        document.querySelector("#L7").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='zipcode']").addEventListener("blur", () => {
+      let zipcodeValidity = document.querySelector("input[name='zipcode']").checkValidity();
+      if (zipcodeValidity === false) {
+        document.querySelector(".help8").classList.remove("hide_help");
+        document.querySelector("#L8").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help8").classList.add("hide_help");
+        document.querySelector("#L8").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='city']").addEventListener("blur", () => {
+      let cityValidity = document.querySelector("input[name='city']").checkValidity();
+      if (cityValidity === false) {
+        document.querySelector(".help9").classList.remove("hide_help");
+        document.querySelector("#L9").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help9").classList.add("hide_help");
+        document.querySelector("#L9").classList.remove("invalid_state");
+      }
+    });
+
+    document.querySelector("input[name='phone']").addEventListener("blur", () => {
+      let phoneValidity = document.querySelector("input[name='phone']").checkValidity();
+      if (phoneValidity === false) {
+        document.querySelector(".help10").classList.remove("hide_help");
+        document.querySelector("#L10").classList.add("invalid_state");
+      } else {
+        document.querySelector(".help10").classList.add("hide_help");
+        document.querySelector("#L10").classList.remove("invalid_state");
+      }
+    });
 
     function passwordMatch() {
       if (
