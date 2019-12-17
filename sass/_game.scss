@@ -1,8 +1,9 @@
 .button-container {
   font-family: "Rubik", sans-serif;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: center;
+  align-items: center;
   background-color: rgb(237, 202, 128);
 
   grid-column: 1/2;
@@ -33,14 +34,19 @@ a {
   height: 3rem;
   background: none;
   border: none;
-  margin-top: 0.3rem;
+  margin-top: 1.6rem;
   width: 5rem;
   padding-bottom: 5rem;
   cursor: pointer;
 }
 
 .reset img {
-  width: 3rem;
+  width: 2.6rem;
+}
+
+.reset:hover {
+  transform: scale(1.03);
+  transition: 0.4s;
 }
 
 .sign-button {
@@ -49,9 +55,16 @@ a {
   width: 6rem;
   height: 3rem;
   margin: 1rem;
-  background: grey;
-  border-radius: 3px;
+  background-color: gainsboro;
+  border-radius: 5px;
   cursor: pointer;
+  border: 2px solid #5c4d4e;
+}
+
+.sign-button:hover {
+  background-color: rgb(237, 237, 237);
+  transition: 0.2s;
+  transform: scale(1.02);
 }
 
 #playtable {
@@ -192,7 +205,11 @@ a {
 
   grid-row: 3/4;
 
-  background-color: rgb(210, 150, 150);
+  background-color: rgb(237, 202, 128);
+  padding: 10px;
+
+  border-bottom: 2px solid #5c4d4e;
+  border-top: 2px solid #5c4d4e;
 
   .endgame_dscore {
     justify-self: center;
@@ -207,12 +224,22 @@ a {
     font-size: 2rem;
     font-weight: 700;
   }
+
+  .card {
+    width: calc(5.1vw + 20px);
+    height: calc(8.2vw + 35px);
+
+    max-height: 100px;
+    max-width: 60px;
+  }
 }
 
 .endgame_text {
   grid-row: 2/3;
   justify-self: center;
+  padding-bottom: 10px;
 }
+
 #endgame_dscore {
   justify-self: center;
   padding: 20px;
@@ -231,21 +258,6 @@ a {
   grid-row: 2/3;
   justify-self: center;
 }
-
-// #dealer_bust {
-// }
-// #player_bust {
-// }
-// #dealer_blackjack {
-// }
-// #player_blackjack {
-// }
-// #dealer_wins {
-// }
-// #player_wins {
-// }
-// #tie {
-// }
 
 .hide {
   opacity: 0;
@@ -300,7 +312,7 @@ a {
   }
 
   .endgame {
-    top: calc(50vh - 200px);
+    top: calc(50vh - 250px);
     left: calc(50vw - 300px);
     width: 600px;
     height: 400px;
@@ -334,6 +346,7 @@ a {
   width: 90px;
   max-height: 40px;
 }
+
 #play_buttons [disabled] {
   background-color: rgb(218, 218, 218);
   color: rgb(142, 142, 142);
