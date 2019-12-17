@@ -46,25 +46,39 @@ html {
     padding: 0;
     margin: 0;
     display: block;
+
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    background: #506966;
+    width: 100%;
+
     ul {
-      background: #506966;
       list-style-type: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
       height: 5rem;
       padding: 0.3rem;
+      grid-column: 2/3;
+      justify-self: right;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      :last-child {
+        margin-right: 10vw;
+      }
 
       li {
         color: white;
-        padding-top: 1.5rem;
         font-family: "Rubik", sans-serif;
         font-weight: 700;
         font-size: 1.1rem;
         cursor: pointer;
+        margin: 0 20px;
       }
     }
     #logo2 {
-      justify-self: left;
+      justify-self: center;
+      align-self: center;
       height: 5rem;
       cursor: pointer;
     }

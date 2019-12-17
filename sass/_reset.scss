@@ -82,24 +82,24 @@ sup {
   top: -0.5em;
 }
 
-a:not([class]) {
-  color: #007bff;
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-  transition: color 0.2s;
-}
+// a:not([class]) {
+//   color: #007bff;
+//   text-decoration: none;
+//   background-color: transparent;
+//   -webkit-text-decoration-skip: objects;
+//   transition: color 0.2s;
+// }
 
-@media (pointer: fine) and (hover: hover) {
-  a:not([class]):hover,
-  a:not([class]):focus {
-    text-decoration: underline;
-  }
+// @media (pointer: fine) and (hover: hover) {
+//   a:not([class]):hover,
+//   a:not([class]):focus {
+//     text-decoration: underline;
+//   }
 
-  a:hover {
-    color: #0056b3;
-  }
-}
+//   a:hover {
+//     color: #0056b3;
+//   }
+// }
 
 a:not([href]):not([tabindex]) {
   color: inherit;
