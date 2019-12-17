@@ -35,7 +35,7 @@ playButton.addEventListener("click", () => {
     setTimeout(function() {
       infoForHit.style.visibility = "visible";
       infoForStand.style.visibility = "visible";
-    }, 3000);
+    }, 2000);
 
     test = false;
   } else {
@@ -375,8 +375,7 @@ function addDealerCardToDOM(card) {
   let dk = document.querySelector("#deck").getBoundingClientRect();
 
   //style transform add
-  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y -
-    ca.y}px) scaleX(-1) `;
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
 
   setTimeout(function() {
     //add transition
@@ -468,8 +467,7 @@ function addPlayerCardToDOM(card) {
   let dk = document.querySelector("#deck").getBoundingClientRect();
 
   //style transform add
-  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y -
-    ca.y}px) scaleX(-1) `;
+  domcard.style.transform = `translate(${dk.x - ca.x}px, ${dk.y - ca.y}px) scaleX(-1) `;
 
   setTimeout(function() {
     //add transition

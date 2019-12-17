@@ -6,6 +6,20 @@
   font-weight: bold;
 }
 
+.greenbutton {
+  background-color: #1a501c;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.greenbutton:hover {
+  background-color: #319134;
+  transition: 0.3s;
+  transform: scale(1.02);
+  box-shadow: 0px 0px 6px 3px #ffffff2f;
+}
+
 #signup {
   margin: 20px;
   padding: 40px;

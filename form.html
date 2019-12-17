@@ -130,13 +130,12 @@
         phoneValidity === true
       ) {
         document.querySelector("#submit").removeAttribute("disabled");
-        document.querySelector("#submit").style.transition = "1s";
-        document.querySelector("#submit").style.borderRadius = "7px";
-        document.querySelector("#submit").style.backgroundColor = "#fff";
+        document.querySelector("#submit").classList.add("greenbutton");
         console.log("Valid");
       } else {
         console.log("Invalid");
         document.querySelector("#submit").disabled = "true";
+        document.querySelector("#submit").classList.remove("greenbutton");
       }
     }
 

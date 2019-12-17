@@ -27,13 +27,17 @@ html {
   display: grid;
   grid-template-columns: auto 1fr auto;
 
-  background: #506966;
+  background: transparent;
   a {
     justify-self: center;
   }
   img {
     width: 4rem;
     padding: 0.5rem;
+  }
+
+  #logo1 {
+    width: 6rem;
   }
 }
 
@@ -49,7 +53,16 @@ html {
 
     display: grid;
     grid-template-columns: 130px 1fr;
-    background: #506966;
+    background: #5c7975;
+
+    background-color: transparent;
+
+    // border-bottom: 2px solid ivory;
+
+    // background-color: #1f4f1c;
+
+    // background-color: #c2a57e;
+    // border-bottom: 3px solid #5c4d4e;
     width: 100%;
 
     ul {
@@ -74,6 +87,10 @@ html {
         font-size: 1.1rem;
         cursor: pointer;
         margin: 0 20px;
+      }
+
+      li:hover {
+        border-bottom: 2px solid ivory;
       }
     }
     #logo2 {
