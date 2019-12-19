@@ -87,9 +87,9 @@
     width: 100%;
     outline: none;
     border: none;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #aba9a0;
     background-color: #5c4d4e;
-    color: white;
+    color: #aba9a0;
   }
 
   button {
@@ -110,6 +110,33 @@
     font-size: 12px;
     font-weight: bold;
   }
+
+  input:invalid:not(:placeholder-shown):not(:focus) {
+    border-bottom-color: rgb(201, 7, 7);
+    background-position-x: calc(100% - 16px);
+    background-position-y: 50%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+
+    background-image: $error;
+    animation: shake 0.13s 2 backwards;
+  }
+
+  input:valid:not(:focus) {
+    border-bottom-color: rgb(43, 152, 43);
+    background-position-x: calc(100% - 16px);
+    background-position-y: 50%;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+
+    background-image: $check;
+  }
+}
+
+@keyframes shake {
+  50% {
+    transform: translateX(15px);
+  }
 }
 
 // label
@@ -127,7 +154,7 @@
     top: 10px;
     left: 0;
     pointer-events: none;
-    color: white;
+    color: $ivory;
     transition: 0.3s;
   }
 
