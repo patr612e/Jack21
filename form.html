@@ -9,23 +9,25 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,500,700&display=swap" rel="stylesheet" />
   </head>
   <body>
+      <div id="signoverlay" class="hide"></div>
       <div id="game-background">
-          <header id="menu">
-              <div id="mobil-header">
-                <img src="static/Backgrounds/burger menu.svg" alt="burgermenu" />
-                <img id="logo1" src="static/Backgrounds/Logo.svg" alt="logo" />
-                <div id="ikkeses"></div>
-              </div>
-              
-              <div id="pc-header">
-                  <img id="logo2" src="static/Backgrounds/Logo.svg" alt="logo" />
-                <ul>
-                  <li>About us</li>
-                  <li>News</li>
-                  <li>Weekly chart</li>
-                </ul>
-              </div>
-            </header>
+        <header id="menu">
+          <div id="mobil-header">
+            <img src="static/Backgrounds/burger menu.svg" alt="burgermenu" />
+            <img id="logo1" src="static/Backgrounds/Logo.svg" alt="logo" />
+            <div id="ikkeses"></div>
+          </div>
+          <div id="pc-header">
+              <a class="justifyself" href="./index.html"><img id="logo2" src="static/Backgrounds/Logo.svg" alt="logo" /></a>
+            <ul>
+              <a href="game.html"><li>Play</li></a>
+              <li>News</li>
+              <li>Weekly chart</li>
+            </ul>
+          </div>
+        </header>
+
+
 
     <form id="signup">
       <div class="firstrow">
@@ -88,8 +90,16 @@
           <label id="L10">Phone</label>
         </div>
       </div>
-      <a href="game.html"><button id="submit" disabled>Register</button></a>
+      <button id="submit" disabled>Register</button>
     </form>
+
+    <div id="signupcomplete" class="hide">
+      <h1>Sign up complete!</h1>
+      <p>Thank you for signing up!</p>
+      <p>We now have your precious data 😏😏</p>
+      <a href="game.html" class="back2game">Back to game</a>
+    </div>
+
   </body>
 
   <script>
@@ -311,6 +321,16 @@
       console.log("button clicked");
       e.preventDefault();
       post();
+
+      document.querySelector("#signupcomplete").classList.remove("hide");
+      document.querySelector("#signoverlay").classList.remove("hide");
+     
+      
     });
+
+    document.querySelector(".back2game").addEventListener("click", e => {
+      document.querySelector("#signupcomplete").classList.add("hide");
+      document.querySelector("#signoverlay").classList.add("hide");
+    })
   </script>
 </html>
