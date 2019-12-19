@@ -4,11 +4,11 @@
   flex-direction: row-reverse;
   justify-content: center;
   align-items: center;
-  background-color: #5c4d4e;
   height: 100px;
-
   grid-column: 1/2;
   grid-row: 4/5;
+  border-radius: 8px;
+  background-color: $william;
 }
 
 .card {
@@ -170,25 +170,20 @@
   left: 0;
   width: 100%;
   height: 300px;
-  background-color: #5c4d4e;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr auto;
   transition: 0.4s;
   opacity: 1;
-}
+  border-radius: 8px;
+  background-color: $william;
 
-// .endgame button {
-//   grid-column: 1/2;
-//   grid-row: 4/5;
-//   justify-self: center;
-//   width: 150px;
-//   padding: 20px;
-//   border-radius: 10px;
-//   cursor: pointer;
-//   margin: 20px;
-//   background-color: grey;
-// }
+  h1,
+  p,
+  div {
+    color: black;
+  }
+}
 
 .endgame_result {
   grid-column: 1/2;
