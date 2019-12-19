@@ -14,7 +14,7 @@ const dealerScorePos = document.querySelector("#dealerscore_printed");
 const infoForDeal = document.querySelector("#deal-info");
 const infoForHit = document.querySelector("#hit-info");
 const infoForStand = document.querySelector("#stand-info");
-let test = true;
+let firstTimePlaying = true;
 
 const endgamePCards = document.querySelectorAll(".endgame_pcards");
 const endgameDCards = document.querySelectorAll(".endgame_dcards");
@@ -31,13 +31,13 @@ playButton.addEventListener("click", () => {
   setTimeout(dealPlayerCard, 600);
   setTimeout(dealDealerCard, 900);
   setTimeout(dealPlayerCard, 1200);
-  if (test === true) {
+  if (firstTimePlaying === true) {
     setTimeout(function() {
       infoForHit.style.visibility = "visible";
       infoForStand.style.visibility = "visible";
     }, 2000);
 
-    test = false;
+    firstTimePlaying = false;
   } else {
   }
 
@@ -356,8 +356,8 @@ function dealDealerCard() {
 
   console.log(dealerScore);
 
-  const test = document.querySelector("#dealingsound").cloneNode();
-  test.play();
+  const clonedsound = document.querySelector("#dealingsound").cloneNode();
+  clonedsound.play();
 
   //disable deal button
 }
@@ -542,7 +542,6 @@ function bustCheck() {
 
     setTimeout(function() {
       document.querySelector("#overlay").style.opacity = "1";
-      document.querySelector("body").style.overflowY = "hidden";
     }, 2000);
 
     // turn (show) first card
@@ -699,7 +698,6 @@ function determineWinner() {
 
   setTimeout(function() {
     document.querySelector("#overlay").style.opacity = "1";
-    document.querySelector("body").style.overflowY = "hidden";
   }, 1500);
 
   // document.querySelector("#overlay").style.opacity = "1";
@@ -729,7 +727,6 @@ function cloneToEndgameBox() {
 
 function resetGame() {
   document.querySelector("#overlay").style.opacity = "0";
-  document.querySelector("body").style.overflowY = "visible";
   // reset arrays (push, pop etc.)
 
   for (let i = 0; i < dealerCards.length; i++) {
