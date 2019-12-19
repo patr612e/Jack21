@@ -121,10 +121,6 @@ input:focus + #label-container label {
     opacity: 0;
   }
 
-  input:invalid:not(:placeholder-shown):not(:focus) ~ .instruction-firstname {
-    opacity: 1;
-  }
-
   input:valid:not(:focus) {
     color: green;
     border-color: green;
@@ -273,5 +269,3 @@ input:focus + #label-container label {
     }
   }
 }
-
-/*Desktop media query */

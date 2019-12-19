@@ -26,10 +26,6 @@
 #background {
   grid-column: 1/4;
   grid-row: 1/3;
-  background-image: url(static/svg/cards/table.svg);
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 
 .guides {
@@ -96,10 +92,6 @@
   #background {
     grid-column: 1/4;
     grid-row: 1/3;
-    background-image: url(static/svg/cards/table.svg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
   }
 
   @keyframes animation {
