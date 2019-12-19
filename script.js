@@ -356,6 +356,9 @@ function dealDealerCard() {
 
   console.log(dealerScore);
 
+  const test = document.querySelector("#dealingsound").cloneNode();
+  test.play();
+
   //disable deal button
 }
 
@@ -449,6 +452,7 @@ function dealPlayerCard() {
   addPlayerCardToDOM(card);
 
   console.log(playerScore);
+  document.querySelector("#dealingsound").play();
 
   // Call Calc playerCards array value function
 }
