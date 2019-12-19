@@ -456,7 +456,7 @@ function dealPlayerCard() {
 function addPlayerCardToDOM(card) {
   let domcard = document.createElement("div");
   domcard.classList.add("card");
-  domcard.style.backgroundImage = `url('/svg/cards/card.svg')`;
+  domcard.style.backgroundImage = `url('./svg/cards/card.svg')`;
 
   // append to DOM
 
